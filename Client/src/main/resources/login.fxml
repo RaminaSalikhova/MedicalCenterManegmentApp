@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="830.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+    <children>
+        <ImageView fitHeight="865.0" fitWidth="555.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@../resources/images/5.jpg" />
+            </image>
+        </ImageView>
+        <Pane layoutX="50.0" layoutY="48.0" opacity="0.78" prefHeight="763.0" prefWidth="481.0" style="-fx-background-color: #000000;">
+            <children>
+                <Label alignment="CENTER" layoutX="79.0" layoutY="57.0" prefHeight="79.0" prefWidth="299.0" style="-fx-border-color: #ffffff;" text="Добро пожаловать!" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Calibri Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="58.0" layoutY="153.0" prefHeight="47.0" prefWidth="341.0" text="Войдите в систему" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <JFXTextField fx:id="txtUsername" focusColor="#ffffff7f" labelFloat="true" layoutX="87.0" layoutY="259.0" prefHeight="47.0" prefWidth="283.0" promptText="USERNAME" style="-fx-background-color: #ffffff22; -fx-background-radius: 50px; -fx-text-fill: #fff; -fx-prompt-text-fill: #fff; -fx-font-size: 18px;" unFocusColor="#ffffff00">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </JFXTextField>
+                <JFXPasswordField fx:id="txtPassword" focusColor="#ffffff7f" labelFloat="true" layoutX="87.0" layoutY="349.0" prefHeight="47.0" prefWidth="283.0" promptText="PASSWORD" style="-fx-background-color: #ffffff22; -fx-background-radius: 50px; -fx-text-fill: #fff; -fx-prompt-text-fill: #fff; -fx-font-size: 18px;" unFocusColor="#ffffff00">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </JFXPasswordField>
+                <JFXButton fx:id="btnSignin" layoutX="87.0" layoutY="442.0" prefHeight="47.0" prefWidth="283.0" style="-fx-background-color: #42b3f4; -fx-background-radius: 50px;" text="ВОЙТИ" textFill="WHITE" />
+                <JFXButton fx:id="btnSignup" layoutX="87.0" layoutY="603.0" prefHeight="47.0" prefWidth="283.0" style="-fx-background-color: #0ab98d; -fx-background-radius: 50px;" text="РЕГИСТРАЦИЯ" textFill="WHITE" />
+                <JFXButton fx:id="btnMain" layoutX="164.0" layoutY="696.0" prefHeight="41.0" prefWidth="130.0" style="-fx-background-color: #ff3f3f; -fx-background-radius: 10;" text="НАЗАД" textFill="WHITE" />
+                <Separator layoutX="58.0" layoutY="216.0" prefHeight="1.0" prefWidth="341.0" />
+                <Separator layoutX="58.0" layoutY="676.0" prefHeight="1.0" prefWidth="341.0" />
+                <Separator layoutX="58.0" layoutY="525.0" prefHeight="1.0" prefWidth="341.0" />
+                <Label alignment="CENTER" layoutX="58.0" layoutY="544.0" prefHeight="47.0" prefWidth="341.0" text="Еще не проходили регистраицию?" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblErrors" alignment="CENTER" layoutX="58.0" layoutY="396.0" prefHeight="47.0" prefWidth="341.0" text="Ошибки" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </children></Pane>
+<!--        <MaterialDesignIconView id="close" fx:id="btnClose" glyphName="WINDOW_CLOSE" layoutX="521.0" layoutY="32.0" onMouseClicked="#closeApp" size="20" stroke="BLACK" textAlignment="CENTER" />-->
+    </children>
+</AnchorPane>
