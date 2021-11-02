@@ -1,0 +1,15 @@
+app\controllers\LoginController.class
+app\controllers\PatientHomeController.class
+app\connection\ClientRequest.class
+app\enums\HANDLER_TYPE.class
+app\connection\ServerResponse.class
+app\controllers\MainController.class
+app\models\DataTransferModels\RegistrationDto.class
+app\App.class
+app\enums\ROLE_TYPE.class
+app\controllers\AboutController.class
+app\connection\ClientConnection.class
+app\controllers\RegistrationController.class
+app\models\DataTransferModels\LoginDto.class
+app\models\AnswerTransferModels\UserAtm.class
+app\helpers\ObjectMessenger.class

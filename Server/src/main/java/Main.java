@@ -1,4 +1,4 @@
-import handlers.ClientHandler;
+import app.handlers.ClientHandler;
 
 import java.net.ServerSocket;
 import java.net.*;
@@ -8,7 +8,6 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         try {
-//            new MySqlContext();
             System.out.println("Server has stared");
 
             ServerSocket ss = new ServerSocket(36363);

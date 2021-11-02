@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.PatientHomeController">
+   <children>
+      <ImageView fitHeight="640" fitWidth="1024" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="109.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../resources/images/dashboard.jpg" />
+         </image>
+      </ImageView>
+   <Pane layoutX="-20.0" layoutY="-3.0" opacity="0.78" prefHeight="646.0" prefWidth="1046.0" style="-fx-background-color: #000000;">
+         <children>
+            <JFXTextField fx:id="txtFirstName" disable="true" focusColor="#a2d2ff" labelFloat="true" layoutX="294.0" layoutY="84.0" prefHeight="31.0" prefWidth="236.0" promptText="ИМЯ" unFocusColor="WHITE" />
+            <JFXTextField fx:id="txtLastName" disable="true" focusColor="#a2d2ff" labelFloat="true" layoutX="294.0" layoutY="183.0" prefHeight="31.0" prefWidth="236.0" promptText="ФАМИЛИЯ" unFocusColor="WHITE" />
+            <JFXTextField fx:id="txtPatronymic" disable="true" focusColor="#a2d2ff" labelFloat="true" layoutX="287.0" layoutY="276.0" prefHeight="31.0" prefWidth="236.0" promptText="ОТЧЕСТВО" unFocusColor="WHITE" />
+            <JFXTextField fx:id="txtDob" disable="true" focusColor="#a2d2ff" labelFloat="true" layoutX="294.0" layoutY="395.0" prefHeight="31.0" prefWidth="236.0" promptText="ДАТА РОЖДЕНИЯ" unFocusColor="WHITE" />
+            <JFXTextField fx:id="txtPhoneNumber" focusColor="#a2d2ff" labelFloat="true" layoutX="665.0" layoutY="84.0" prefHeight="31.0" prefWidth="260.0" promptText="НОМЕР ТЕЛЕФОНА" unFocusColor="WHITE" />
+            <JFXTextField fx:id="txtUsername" focusColor="#a2d2ff" labelFloat="true" layoutX="662.0" layoutY="183.0" prefHeight="31.0" prefWidth="260.0" promptText="ЛОГИН" unFocusColor="WHITE" />
+            <Label layoutX="568.0" layoutY="38.0" prefHeight="20.0" prefWidth="181.0" text="ВАШИ ЛИЧНЫЕ ДАННЫЕ" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label layoutX="249.0" layoutY="591.0" prefHeight="41.0" prefWidth="744.0" text="*Вы можете изменять данные в правом столбце. Для этого введите новое значение и нажмите кнопку сохранить" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <JFXButton fx:id="saveBtn" alignment="CENTER" layoutX="684.0" layoutY="307.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="217.0" style="-fx-background-color: #05668D;" text="Сохранить" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Label fx:id="lblErrors" alignment="CENTER" layoutX="662.0" layoutY="252.0" prefHeight="31.0" prefWidth="284.0" text="Ошибка" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+   </Pane>
+   <VBox blendMode="ADD" prefHeight="640.0" prefWidth="224.0" style="-fx-background-color: #05668D;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton fx:id="workScheduleBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="209.0" style="-fx-background-color: #05668D;" text="График  работы" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="appointmentBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="208.0" style="-fx-background-color: #05668D; " text="Запись на прием" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="commentBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="209.0" style="-fx-background-color: #05668D; " text="Оставить отзыв" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="backBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="208.0" style="-fx-background-color: #05668D;" text="Выйти" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </JFXButton>
+           </children>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

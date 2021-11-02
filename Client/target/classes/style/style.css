@@ -1,4 +1,51 @@
+.hover_border:hover {
+    -fx-background-color:#509DFF;
+    -fx-cursor: hand;
+}
 
+.hover_bg_color_grey:hover {
+    -fx-background-color:#F2F0FB;
+}
+
+.hover_bg_color_red:hover {
+    -fx-background-color:#FF4242;
+}
+
+.hover_mouse_hand:hover {
+    -fx-cursor: hand;
+}
+
+.login_type_btn{
+    -fx-background-radius: 50;
+    -fx-background-color: #B8B6C7;
+}
+
+.selected_login_type_btn{
+    -fx-background-radius: 50;
+    -fx-background-color: #2484ff;
+}
+
+.jfx-date-picker .text-field{
+    -jfx-focus-color: #B8B6C7;
+    -jfx-unfocus-color: #ffffff00;
+    -fx-prompt-text-fill: #282B2F;
+}
+
+.jfx-time-picker .text-field{
+    -jfx-focus-color: #B8B6C7;
+    -jfx-unfocus-color: #ffffff00;
+    -fx-prompt-text-fill: #282B2F;
+}
+
+.table-view .scroll-bar * {
+    -fx-min-width: 0;
+    -fx-pref-width: 0;
+    -fx-max-width: 0;
+
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
 .tree-table-view{
     -fx-tree-table-color: #43dda1;
     -fx-tree-table-rippler-color : rgba(255, 0, 0, 0.9);
