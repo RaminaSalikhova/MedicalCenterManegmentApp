@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="app.entity.Doctor" table="doctor" schema="hospital_db">
+        <id name="id">
+            <column name="ID" sql-type="bigint"/>
+        </id>
+        <property name="userId">
+            <column name="userID" sql-type="bigint"/>
+        </property>
+        <property name="scheduleId">
+            <column name="scheduleID" sql-type="bigint"/>
+        </property>
+        <property name="specializationId">
+            <column name="specializationID" sql-type="bigint"/>
+        </property>
+        <property name="districtId">
+            <column name="districtID" sql-type="bigint"/>
+        </property>
+        <property name="salary">
+            <column name="salary" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="experience">
+            <column name="experience" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <many-to-one name="userByUserId" class="app.entity.User">
+            <column name="userID"/>
+        </many-to-one>
+        <many-to-one name="scheduleByScheduleId" class="app.entity.Schedule">
+            <column name="scheduleID"/>
+        </many-to-one>
+        <many-to-one name="specializationBySpecializationId" class="app.entity.Specialization">
+            <column name="specializationID"/>
+        </many-to-one>
+        <many-to-one name="districtByDistrictId" class="app.entity.District">
+            <column name="districtID"/>
+        </many-to-one>
+        <set name="appointmentsById" inverse="true">
+            <key>
+                <column name="doctorID"/>
+            </key>
+            <one-to-many not-found="ignore" class="app.entity.Appointment"/>
+        </set>
+    </class>
+</hibernate-mapping>

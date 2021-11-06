@@ -5,5 +5,9 @@ public enum HANDLER_TYPE {
     register,
     close,
     getUserData,
-    updateUserByPatient
+    updateUserByPatient,
+    getDoctorsList,
+    getAvailableTime,
+    setAppointment,
+    getSchedule
 }

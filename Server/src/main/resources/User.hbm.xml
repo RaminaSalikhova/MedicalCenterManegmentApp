@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="app.entity.User" table="user" schema="hospital_db">
+        <id name="id">
+            <column name="ID" sql-type="bigint"/>
+        </id>
+        <property name="dateOfBirth">
+            <column name="dateOfBirth" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="firstName">
+            <column name="firstName" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="lastName">
+            <column name="lastName" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="login">
+            <column name="login" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="password">
+            <column name="password" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="patronymic">
+            <column name="patronymic" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="phoneNum">
+            <column name="phoneNum" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="role">
+            <column name="role" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="status">
+            <column name="status" sql-type="bit(1)" not-null="true"/>
+        </property>
+        <set name="doctorsById" inverse="true">
+            <key>
+                <column name="userID"/>
+            </key>
+            <one-to-many not-found="ignore" class="app.entity.Doctor"/>
+        </set>
+        <set name="patientsById" inverse="true">
+            <key>
+                <column name="userID"/>
+            </key>
+            <one-to-many not-found="ignore" class="app.entity.Patient"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -35,6 +35,8 @@ public class LoginController {
     @FXML
     private JFXButton btnMain, btnSignUp, btnSignIn;
 
+    private String role;
+
     @FXML
     public void handleButtonClicks(javafx.event.ActionEvent ae) {
         if (ae.getSource() == btnMain) {  ////button to go back to main page
@@ -72,8 +74,24 @@ public class LoginController {
                     userHolder.setUser(getUserAtm());
 
                     Stage stage = new Stage();
-                    Pane root = FXMLLoader.load(getClass().getResource("/patientHome.fxml"));
-                    stage.setScene(new Scene(root));
+                    Pane root;
+                    switch (role){
+                        case "ADMIN":{
+                            root = FXMLLoader.load(getClass().getResource("/adminHome.fxml"));
+                            stage.setScene(new Scene(root));
+                            break;
+                        }
+                        case "PATIENT":{
+                            root = FXMLLoader.load(getClass().getResource("/patientHome.fxml"));
+                            stage.setScene(new Scene(root));
+                            break;
+                        }
+                        case "DOCTOR":{
+                            root = FXMLLoader.load(getClass().getResource("/doctorHome.fxml"));
+                            stage.setScene(new Scene(root));
+                            break;
+                        }
+                    }
                     stage.show();
                     stage.setResizable(false);
 //                stage.setFullScreen(true);
@@ -107,7 +125,7 @@ public class LoginController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            ServerResponse response = null;
+            ServerResponse<UserAtm> response = null;
             try {
                 response = (ServerResponse) ClientConnection.getInstance().receiveObject();
             } catch (ClassNotFoundException | IOException e) {
@@ -116,6 +134,8 @@ public class LoginController {
             if (response.getStatus() == true) {
 //                lblErrors.setText(response.getData().toString());
                 System.out.println(response.getData());
+                UserAtm userAtm=response.getData();
+                role= userAtm.getRole();
                 return "Success";
             } else {
                 lblErrors.setText(response.getMessage());

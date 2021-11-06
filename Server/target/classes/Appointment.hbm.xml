@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="app.entity.Appointment" table="appointment" schema="hospital_db">
+        <id name="id">
+            <column name="ID" sql-type="bigint"/>
+        </id>
+        <property name="doctorId">
+            <column name="doctorID" sql-type="bigint"/>
+        </property>
+        <property name="patientId">
+            <column name="patientID" sql-type="bigint"/>
+        </property>
+        <property name="diagnosis">
+            <column name="diagnosis" sql-type="varchar(2000)" length="2000" not-null="true"/>
+        </property>
+        <property name="recommendation">
+            <column name="recommendation" sql-type="varchar(2000)" length="2000" not-null="true"/>
+        </property>
+        <property name="report">
+            <column name="report" sql-type="varchar(2000)" length="2000" not-null="true"/>
+        </property>
+        <property name="dateTimeOfAppointment">
+            <column name="dateTimeOfAppointment" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="isVisited">
+            <column name="isVisited" sql-type="tinyint(1)" not-null="true"/>
+        </property>
+        <many-to-one name="doctorByDoctorId" class="app.entity.Doctor">
+            <column name="doctorID"/>
+        </many-to-one>
+        <many-to-one name="patientByPatientId" class="app.entity.Patient">
+            <column name="patientID"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

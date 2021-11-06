@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.AvailableTimeController">
+    <children>
+        <ImageView fitHeight="711.0" fitWidth="1133.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-64.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@../resources/images/dashboard.jpg" />
+            </image>
+        </ImageView>
+        <Pane opacity="0.78" prefHeight="650.0" prefWidth="1153.0" style="-fx-background-color: #000000;">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="449.0" layoutY="14.0" prefHeight="54.0" prefWidth="190.0" text="Заказ талона" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="439.0" layoutY="71.0" prefHeight="39.0" prefWidth="209.0" text="Выберите время" textFill="WHITE" />
+
+                <BorderPane layoutX="245.0" layoutY="131.0">
+                    <center>
+                        <ScrollPane disable="false" prefHeight="7861.0" prefWidth="1143.0" visible="true" />
+                        <TableView fx:id="tableView" layoutX="304.0" layoutY="129.0" prefHeight="450.0" prefWidth="251.0">
+                            <columns>
+                                <TableColumn fx:id="idColumnID" prefWidth="119.33334350585938" text="ID" visible="false" />
+                                <TableColumn fx:id="idColumnDay" prefWidth="113.99998474121094" text="День" />
+                                <TableColumn fx:id="idColumnTime" prefWidth="142.66665649414062" text="Время" />
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+
+            </children>
+        </Pane>
+        <VBox blendMode="ADD" prefHeight="640.0" prefWidth="224.0" style="-fx-background-color: #05668D;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <JFXButton fx:id="workScheduleBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="209.0" style="-fx-background-color: #05668D;" text="График  работы" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </JFXButton>
+                <JFXButton fx:id="appointmentBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" prefHeight="54.0" prefWidth="208.0" style="-fx-background-color: #05668D; " text="Запись на прием" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </JFXButton>
+                <JFXButton fx:id="commentBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="209.0" style="-fx-background-color: #05668D; " text="Оставить отзыв" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </JFXButton>
+                <JFXButton fx:id="backBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="208.0" style="-fx-background-color: #05668D;" text="Выйти" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </JFXButton>
+            </children>
+            <padding>
+                <Insets bottom="5.0" />
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

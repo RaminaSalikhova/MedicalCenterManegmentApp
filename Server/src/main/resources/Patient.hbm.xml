@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="app.entity.Patient" table="patient" schema="hospital_db">
+        <id name="id">
+            <column name="ID" sql-type="bigint"/>
+        </id>
+        <property name="userId">
+            <column name="userID" sql-type="bigint"/>
+        </property>
+        <property name="addressId">
+            <column name="addressID" sql-type="bigint"/>
+        </property>
+        <property name="sex">
+            <column name="sex" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="weight">
+            <column name="weight" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="height">
+            <column name="height" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <many-to-one name="userByUserId" class="app.entity.User">
+            <column name="userID"/>
+        </many-to-one>
+        <many-to-one name="addressByAddressId" class="app.entity.Address">
+            <column name="addressID"/>
+        </many-to-one>
+        <set name="appointmentsById" inverse="true">
+            <key>
+                <column name="patientID"/>
+            </key>
+            <one-to-many not-found="ignore" class="app.entity.Appointment"/>
+        </set>
+    </class>
+</hibernate-mapping>

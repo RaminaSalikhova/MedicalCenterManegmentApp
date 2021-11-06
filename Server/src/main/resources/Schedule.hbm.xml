@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="app.entity.Schedule" table="schedule" schema="hospital_db">
+        <id name="id">
+            <column name="ID" sql-type="bigint"/>
+        </id>
+        <property name="date">
+            <column name="date" sql-type="date" not-null="true"/>
+        </property>
+        <property name="startTime">
+            <column name="startTime" sql-type="time" not-null="true"/>
+        </property>
+        <property name="endTime">
+            <column name="endTime" sql-type="time" not-null="true"/>
+        </property>
+        <property name="roomNumber">
+            <column name="roomNumber" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="isWeekend">
+            <column name="isWeekend" sql-type="tinyint(1)" not-null="true"/>
+        </property>
+        <set name="doctorsById" inverse="true">
+            <key>
+                <column name="scheduleID"/>
+            </key>
+            <one-to-many not-found="ignore" class="app.entity.Doctor"/>
+        </set>
+    </class>
+</hibernate-mapping>

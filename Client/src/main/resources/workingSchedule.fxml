@@ -2,18 +2,34 @@
 
 <?import com.jfoenix.controls.*?>
 <?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.WorkingScheduleController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.WorkingScheduleController">
     <children>
         <ImageView fitHeight="710.0" fitWidth="1274.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-138.0" AnchorPane.topAnchor="0.0">
             <image>
                 <Image url="@../resources/images/dashboard.jpg" />
             </image>
         </ImageView>
-        <Pane layoutX="-20.0" layoutY="-3.0" opacity="0.78" prefHeight="643.0" prefWidth="1156.0" style="-fx-background-color: #000000;" />
+        <Pane layoutX="-20.0" layoutY="-3.0" opacity="0.78" prefHeight="643.0" prefWidth="1156.0" style="-fx-background-color: #000000;">
+            <BorderPane layoutX="329.0" layoutY="123.0" prefHeight="434.0" prefWidth="700.0">
+                <center>
+                    <ScrollPane disable="false" prefHeight="7861.0" prefWidth="1143.0" visible="true" />
+                    <TableView fx:id="tableView" layoutX="454.0" layoutY="129.0" prefHeight="450.0" prefWidth="251.0">
+                        <columns>
+                            <TableColumn fx:id="idColumnFirst_name" prefWidth="149.0" text="Имя" />
+                            <TableColumn fx:id="idColumnLast_name" prefWidth="210.3333740234375" text="Фамилия" />
+                            <TableColumn fx:id="idColumnStartTime" prefWidth="114.33331298828125" text="С" />
+                            <TableColumn fx:id="idColumnEndTime" prefWidth="104.0" text="До" />
+                            <TableColumn fx:id="idColumnRoomNumber" prefWidth="121.33331298828125" text="Кабинет" />
+                        </columns>
+                    </TableView>
+                </center>
+            </BorderPane>
+        </Pane>
         <VBox blendMode="ADD" prefHeight="640.0" prefWidth="224.0" style="-fx-background-color: #05668D;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <JFXButton fx:id="workScheduleBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="209.0" style="-fx-background-color: #05668D;" text="График  работы" textFill="WHITE">

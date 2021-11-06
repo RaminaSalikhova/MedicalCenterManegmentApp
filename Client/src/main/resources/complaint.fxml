@@ -1,45 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
-<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.patient.complaint.PatientComplaintController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.ComplaintController">
     <children>
-        <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="My Complaints">
+        <ImageView fitHeight="710.0" fitWidth="1274.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-138.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@../resources/images/dashboard.jpg" />
+            </image>
+        </ImageView>
+        <Pane layoutX="-20.0" layoutY="-3.0" opacity="0.78" prefHeight="643.0" prefWidth="1156.0" style="-fx-background-color: #000000;">
+            <JFXTextArea fx:id="textarea" focusColor="WHITE" layoutX="308.0" layoutY="177.0" prefHeight="215.0" prefWidth="519.0" promptText="Вы можете оставить отзыв тут. Нам важно ваше мнение" unFocusColor="#e8e0e0">
             <font>
-                <Font name="Gotham Bold" size="16.0" />
-            </font>
-            <VBox.margin>
-                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-            </VBox.margin>
-        </Text>
-        <TableView fx:id="complaintTable" onMouseClicked="#complaintTable_MouseEvent" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" VBox.vgrow="ALWAYS">
-            <columns>
-                <TableColumn prefWidth="122.0" text="Complaint ID" />
-                <TableColumn prefWidth="278.0" text="Complaint type" />
-                <TableColumn prefWidth="148.0" text="Date" />
-                <TableColumn prefWidth="181.0" text="Status" />
-            </columns>
-            <VBox.margin>
-                <Insets bottom="15.0" left="15.0" right="15.0" />
-            </VBox.margin>
-        </TableView>
-        <HBox alignment="CENTER_RIGHT">
-            <VBox.margin>
-                <Insets />
-            </VBox.margin>
-        </HBox>
+               <Font size="19.0" />
+            </font></JFXTextArea>
+            <JFXButton fx:id="saveCommentBtn" alignment="CENTER" layoutX="308.0" layoutY="405.0" onAction="#handleButtonClicks" prefHeight="39.0" prefWidth="123.0" style="-fx-background-color: #05668D;" text="Отправить" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            </JFXButton>
+        </Pane>
+        <VBox blendMode="ADD" prefHeight="640.0" prefWidth="224.0" style="-fx-background-color: #05668D;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <JFXButton fx:id="workScheduleBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="209.0" style="-fx-background-color: #05668D;" text="График  работы" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </JFXButton>
+                <JFXButton fx:id="appointmentBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="208.0" style="-fx-background-color: #05668D; " text="Запись на прием" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </JFXButton>
+                <JFXButton fx:id="commentBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="209.0" style="-fx-background-color: #05668D; " text="Оставить отзыв" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </JFXButton>
+                <JFXButton fx:id="backBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="208.0" style="-fx-background-color: #05668D;" text="Выйти" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </JFXButton>
+            </children>
+            <padding>
+                <Insets bottom="5.0" />
+            </padding>
+        </VBox>
     </children>
-</VBox>
+</AnchorPane>

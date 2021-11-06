@@ -6,19 +6,36 @@
     <session-factory>
         <!-- Connection settings -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
-        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hospital_db</property>
         <property name="hibernate.connection.pool_size">100</property>
-
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">r4mina_sql_srvr</property>
 
 <!--        <property name="app.connection.url"/>-->
 <!--        <property name="app.connection.driver_class"></property>-->
-         <property name="hibernate.connection.username">root</property>
-         <property name="hibernate.connection.password">r4mina_sql_srvr</property>
 
-<!--         DB schema will be updated if needed-->
+        <!--         DB schema will be updated if needed-->
          <property name="hibernate.hbm2ddl.auto">update</property>
         <!-- Print executed SQL to stdout -->
         <property name="show_sql">true</property>
+        <mapping class="app.entity.Address"/>
+        <mapping resource="Address.hbm.xml"/>
+        <mapping class="app.entity.Appointment"/>
+        <mapping resource="Appointment.hbm.xml"/>
+        <mapping class="app.entity.District"/>
+        <mapping resource="District.hbm.xml"/>
+        <mapping class="app.entity.Doctor"/>
+        <mapping resource="Doctor.hbm.xml"/>
+        <mapping class="app.entity.Patient"/>
+        <mapping resource="Patient.hbm.xml"/>
+        <mapping class="app.entity.Schedule"/>
+        <mapping resource="Schedule.hbm.xml"/>
+        <mapping class="app.entity.Specialization"/>
+        <mapping resource="Specialization.hbm.xml"/>
+        <mapping class="app.entity.User"/>
+        <mapping resource="User.hbm.xml"/>
+
+
     </session-factory>
 </hibernate-configuration>

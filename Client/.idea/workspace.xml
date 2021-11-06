@@ -5,75 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cb8cb91-58a2-43ad-8f24-4c34e207b619" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jfoenix_jfoenix_9_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/helpers/ObjectMessenger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/.idea/Server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/.idea/libraries/Hibernate_5_4_11_5_4_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/.idea/libraries/mysql_connector_java_8_0_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/handlers/AuthorizationHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/models/AnswerTransferModels/UserAtm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/models/DataTransferModels/LoginDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enums/HANDLER_TYPE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/helpers/ObjectMessenger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/ClientRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/connection/ClientRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/ServerResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/connection/ClientConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enums/HANDLER_TYPE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/helpers/ObjectMessenger.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Appointment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/District.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Doctor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Patient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Schedule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Specialization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/Address.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/Appointment.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/District.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/Doctor.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/Patient.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/Schedule.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/Specialization.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/User.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/PatientAppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/PatientAppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/WorkingScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/WorkingScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/enums/HANDLER_TYPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/enums/HANDLER_TYPE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/complaint.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/complaint.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/patientAppointment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/patientAppointment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/workingSchedule.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/workingSchedule.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/ClientRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/ServerResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/style/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/patientAppointment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/patientAppointment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/patientComment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/patientComment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/patientHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/patientHome.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/workingSchedule.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/workingSchedule.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/.idea/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/Server.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/enums/HANDLER_TYPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/enums/HANDLER_TYPE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/enums/TYPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/enums/TYPE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/handlers/AuthorizationHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/handlers/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/handlers/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/helpers/ObjectMessenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/helpers/ObjectMessenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/models/AnswerTransferModels/UserAtm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/models/ClientRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/connection/ClientRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/models/DataTransferModels/LoginDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/models/ServerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/connection/ServerResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/enums/HANDLER_TYPE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/handlers/ClientHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/helpers/ObjectMessenger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/models/ClientRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/models/ServerResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/enums/HANDLER_TYPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/enums/HANDLER_TYPE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/handlers/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/handlers/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/utils/HibernateSessionFactoryUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/utils/HibernateSessionFactoryUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +89,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29057592" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -166,7 +138,9 @@
       <updated>1635518632430</updated>
       <workItem from="1635518633716" duration="36558000" />
       <workItem from="1635862168335" duration="958000" />
-      <workItem from="1635863457473" duration="15005000" />
+      <workItem from="1635863457473" duration="16512000" />
+      <workItem from="1635884057925" duration="6081000" />
+      <workItem from="1636039178253" duration="57345000" />
     </task>
     <servers />
   </component>
@@ -189,6 +163,7 @@
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="com.jfoenix.controls.JFXTextField" memberName="text" />
+        <PinnedItemInfo parentTag="app.connection.ServerResponse" memberName="data" />
       </pinned-members>
     </pin-to-top-manager>
   </component>

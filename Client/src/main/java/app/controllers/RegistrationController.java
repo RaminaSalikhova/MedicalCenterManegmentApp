@@ -114,9 +114,9 @@ public class RegistrationController {
             registrationDto.setPassword(txtPassword.getText());
             registrationDto.setPhoneNum(txtPhoneNumber.getText());
             if (checkBox.isSelected()) {
-                if(txtPasscode.getText()=="111"){
+                if(txtPasscode.getText().equals("111")){
                     registrationDto.setRole(ROLE_TYPE.DOCTOR.toString());
-                }else if( txtPasscode.getText()=="222"){
+                }else if( txtPasscode.getText().equals("222")){
                     registrationDto.setRole(ROLE_TYPE.ADMIN.toString());
                 }
             }else {
@@ -141,6 +141,7 @@ public class RegistrationController {
             if (response.getStatus() == true) {
                 lblErrors.setText(response.getData().toString());
                 System.out.println(response.getData());
+
             } else {
                 lblErrors.setText(response.getMessage());
                 System.out.println(response.getMessage());

@@ -11,7 +11,7 @@
     <children>
         <ImageView fitHeight="640" fitWidth="1024" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="109.0" AnchorPane.topAnchor="0.0">
             <image>
-                <Image url="@../resources/images/dashboard.jpg" />
+                <Image url="@../resources/images/abstract-back.jpg" />
             </image>
         </ImageView>
         <Pane layoutY="-3.0" opacity="0.78" prefHeight="646.0" prefWidth="1030.0" style="-fx-background-color: #000000;">

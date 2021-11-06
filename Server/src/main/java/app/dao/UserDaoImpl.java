@@ -2,7 +2,6 @@ package app.dao;
 
 import app.entity.User;
 import app.models.DataTransferModels.UpdateUserByPatientDto;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import app.utils.HibernateSessionFactoryUtil;
@@ -11,12 +10,11 @@ import org.hibernate.query.Query;
 import java.util.List;
 
 public class UserDaoImpl implements UserDao {
-    public User findById(int id) {
+    public User findById(long id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, id);
     }
 
     public void save(User user) {
-
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.save(user);

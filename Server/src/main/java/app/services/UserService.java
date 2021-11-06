@@ -10,8 +10,8 @@ import java.util.List;
 public class UserService {
     public UserDao userDao = new UserDaoImpl();
 
-    public User findById(int id) {
-        return findById(id);
+    public User findById(long id) {
+        return userDao.findById(id);
     }
 
     public void save(User user) {

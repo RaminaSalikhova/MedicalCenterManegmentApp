@@ -6,7 +6,7 @@ import app.models.DataTransferModels.UpdateUserByPatientDto;
 import java.util.List;
 
 public interface UserDao {
-    public User findById(int id);
+    public User findById(long id);
 
     public void save(User user);
 
