@@ -5,44 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cb8cb91-58a2-43ad-8f24-4c34e207b619" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Appointment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/District.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Doctor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Patient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Schedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Specialization.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/Address.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/Appointment.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/District.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/Doctor.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/Patient.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/Schedule.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/Specialization.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/User.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Complaint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/resources/Complaint.hbm.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/PatientAppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/PatientAppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/ComplaintController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/ComplaintController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/DoctorHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/DoctorHomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/PatientHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/PatientHomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/WorkingScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/WorkingScheduleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/enums/HANDLER_TYPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/enums/HANDLER_TYPE.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/complaint.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/complaint.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/patientAppointment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/patientAppointment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/workingSchedule.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/workingSchedule.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/doctorHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/doctorHome.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/doctorHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/doctorHome.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/patientAppointment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/patientAppointment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/patientComment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/patientComment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/patientHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/patientHome.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/workingSchedule.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/workingSchedule.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/.idea/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/Server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/AppointmentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/AppointmentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/AppointmentDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/AppointmentDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/DoctorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/DoctorDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/DoctorDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/DoctorDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/PatientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/PatientDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/PatientDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/PatientDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/enums/HANDLER_TYPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/enums/HANDLER_TYPE.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/handlers/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/handlers/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/services/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/services/AppointmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/services/DoctorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/services/DoctorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/services/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/services/PatientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/utils/HibernateSessionFactoryUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/utils/HibernateSessionFactoryUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/hibernate.cfg.xml" afterDir="false" />
@@ -140,7 +125,7 @@
       <workItem from="1635862168335" duration="958000" />
       <workItem from="1635863457473" duration="16512000" />
       <workItem from="1635884057925" duration="6081000" />
-      <workItem from="1636039178253" duration="57345000" />
+      <workItem from="1636039178253" duration="84967000" />
     </task>
     <servers />
   </component>

@@ -9,5 +9,9 @@ public enum HANDLER_TYPE {
     getDoctorsList,
     getAvailableTime,
     setAppointment,
-    getSchedule
+    getSchedule,
+    sendComplaint,
+    getPatientList,
+    updateAppointmentDto,
+    getPatientAppointment
 }

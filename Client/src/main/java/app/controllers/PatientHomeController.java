@@ -64,7 +64,7 @@ public class PatientHomeController implements Initializable{
         } else if(ae.getSource() == commentBtn) {     /////yes is pressed when patient feels he is cured
             try {
                 Stage stage = new Stage();
-                Pane root = FXMLLoader.load(getClass().getResource("/patientComment.fxml"));
+                Pane root = FXMLLoader.load(getClass().getResource("/complaint.fxml"));
                 stage.setScene(new Scene(root, 1024,640));
                 stage.show();
                 stage.setResizable(false);

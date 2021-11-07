@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.*?>
 <?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -14,6 +15,7 @@
             </image>
         </ImageView>
         <Pane layoutX="-20.0" layoutY="-3.0" opacity="0.78" prefHeight="643.0" prefWidth="1156.0" style="-fx-background-color: #000000;">
+            <Label fx:id="lblErrors" layoutX="303.0" layoutY="117.0" prefHeight="17.0" prefWidth="199.0" />
             <JFXTextArea fx:id="textarea" focusColor="WHITE" layoutX="308.0" layoutY="177.0" prefHeight="215.0" prefWidth="519.0" promptText="Вы можете оставить отзыв тут. Нам важно ваше мнение" unFocusColor="#e8e0e0">
             <font>
                <Font size="19.0" />

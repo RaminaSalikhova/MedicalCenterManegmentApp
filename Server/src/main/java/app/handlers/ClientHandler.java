@@ -4,10 +4,7 @@ import app.connection.ClientRequest;
 import app.dao.SpecializationDao;
 import app.entity.*;
 import app.helpers.ObjectMessenger;
-import app.models.AnswerTransferModels.GetAvailableTimeListAtm;
-import app.models.AnswerTransferModels.GetDoctorListAtm;
-import app.models.AnswerTransferModels.GetScheduleListAtm;
-import app.models.AnswerTransferModels.UserAtm;
+import app.models.AnswerTransferModels.*;
 import app.models.DataTransferModels.*;
 import app.connection.ServerResponse;
 import app.services.*;
@@ -340,18 +337,18 @@ public class ClientHandler extends Thread {
                     case getSchedule: {
                         ServerResponse response = new ServerResponse<GetScheduleListAtm>();
 
-                        List<GetScheduleListAtm> getScheduleListAtms=new ArrayList<>();
+                        List<GetScheduleListAtm> getScheduleListAtms = new ArrayList<>();
 
                         DoctorService doctorService = new DoctorService();
-                        List<Doctor> doctorList=doctorService.findAll();
+                        List<Doctor> doctorList = doctorService.findAll();
 
-                        for(Doctor doctor:doctorList){
-                            GetScheduleListAtm scheduleListAtm=new GetScheduleListAtm();
+                        for (Doctor doctor : doctorList) {
+                            GetScheduleListAtm scheduleListAtm = new GetScheduleListAtm();
                             UserService userService = new UserService();
                             var searchedUser = userService.findById(doctor.getUserId());
 
                             ScheduleService scheduleService = new ScheduleService();
-                            Schedule schedule= scheduleService.findById(doctor.getScheduleId());
+                            Schedule schedule = scheduleService.findById(doctor.getScheduleId());
 
                             scheduleListAtm.setFirst_name(searchedUser.getFirstName());
                             scheduleListAtm.setLast_name(searchedUser.getLastName());
@@ -363,6 +360,117 @@ public class ClientHandler extends Thread {
 
                         response.setStatus(true);
                         response.setData(getScheduleListAtms);
+
+                        om.sendObject(response);
+                        break;
+                    }
+                    case sendComplaint: {
+                        ServerResponse response = new ServerResponse();
+
+                        SendComplaintDto sendComplaintDto;
+                        sendComplaintDto = (SendComplaintDto) req.getData();
+                        ComplaintService complaintService = new ComplaintService();
+                        Complaint complaint = new Complaint();
+                        complaint.setMessage(sendComplaintDto.getMessage());
+                        complaintService.save(complaint);
+                        response.setStatus(true);
+
+                        om.sendObject(response);
+                        break;
+                    }
+                    case getPatientList: {
+                        ServerResponse response = new ServerResponse<GetPatientListAtm>();
+
+                        GetPatientListDto getPatientListDto = (GetPatientListDto) req.getData();
+
+                        List<GetPatientListAtm> getPatientListAtmList = new ArrayList<>();
+                        DoctorService doctorService = new DoctorService();
+                        Doctor searchedDoctor = doctorService.findAllByUserID(getPatientListDto.getUserID());
+
+                        PatientService patientService = new PatientService();
+                        List<Patient> patientList = patientService.findAll();
+
+                        for (Patient patient : patientList) {
+
+                            AppointmentService appointmentService = new AppointmentService();
+                            List<Appointment> appointments = appointmentService.findAllByPatientIDAndDoctorID(patient.getId(), searchedDoctor.getId());
+                            for (Appointment appointment : appointments) {
+                                GetPatientListAtm getPatientListAtm = new GetPatientListAtm();
+                                UserService userService = new UserService();
+                                var searchedUser = userService.findById(patient.getUserId());
+
+                                AddressService addressService = new AddressService();
+                                Address searchedAddress = addressService.findById(patient.getId());
+
+                                DistrictService districtService = new DistrictService();
+                                District searchedDistrict = districtService.findById(searchedAddress.getDistrictId());
+
+                                String strAddress = searchedAddress.getName();
+                                strAddress.concat(" ");
+                                strAddress.concat(searchedAddress.getHouseNumber().toString());
+                                strAddress.concat(" ");
+                                strAddress.concat(searchedAddress.getFlatNumber().toString());
+                                strAddress.concat(" /");
+                                strAddress.concat(searchedDistrict.getName().toString());
+
+                                getPatientListAtm.setPatientID(patient.getId());
+                                getPatientListAtm.setAppointmentID(appointment.getId());
+                                getPatientListAtm.setFirst_name(searchedUser.getFirstName());
+                                getPatientListAtm.setLast_name(searchedUser.getLastName());
+                                getPatientListAtm.setPatronymic(searchedUser.getPatronymic());
+
+                                getPatientListAtm.setAddress(strAddress);
+                                getPatientListAtm.setSex(patient.getSex());
+
+                                getPatientListAtm.setTime(appointment.getDateTimeOfAppointment().toString());
+                                getPatientListAtmList.add(getPatientListAtm);
+                            }
+                        }
+
+                        response.setStatus(true);
+                        response.setData(getPatientListAtmList);
+
+                        om.sendObject(response);
+                        break;
+                    }
+                    case updateAppointmentDto: {
+                        ServerResponse response = new ServerResponse<String>();
+
+                        UpdateAppointmentDto updateAppointmentDto;
+                        updateAppointmentDto = (UpdateAppointmentDto) req.getData();
+                        PatientService patientService = new PatientService();
+                        patientService.updateWeightAndHeight(updateAppointmentDto.getWeight(), updateAppointmentDto.getHeight(), updateAppointmentDto.getPatientID());
+                        AppointmentService appointmentService = new AppointmentService();
+                        appointmentService.updateVisit(updateAppointmentDto);
+                        response.setStatus(true);
+
+                        om.sendObject(response);
+                        break;
+                    }
+                    case getPatientAppointment: {
+                        ServerResponse response = new ServerResponse<GetPatientListAtm>();
+
+                        DoctorAppointmentPatientDto doctorAppointmentPatientDto = (DoctorAppointmentPatientDto) req.getData();
+
+                        DoctorAppointmentPatientAtm doctorAppointmentPatientAtm = new DoctorAppointmentPatientAtm();
+
+                        AppointmentService appointmentService = new AppointmentService();
+                        Appointment appointment = appointmentService.findById(doctorAppointmentPatientDto.getAppointmentID());
+
+                        doctorAppointmentPatientAtm.setPatientID(doctorAppointmentPatientDto.getPatientID());
+                        doctorAppointmentPatientAtm.setDiagnose(appointment.getDiagnosis());
+                        doctorAppointmentPatientAtm.setRecommendation(appointment.getRecommendation());
+                        doctorAppointmentPatientAtm.setReport(appointment.getReport());
+
+                        PatientService patientService = new PatientService();
+                        Patient patient = patientService.findById(doctorAppointmentPatientDto.getPatientID());
+
+                        doctorAppointmentPatientAtm.setHeight(patient.getHeight());
+                        doctorAppointmentPatientAtm.setWeight(patient.getWeight());
+                        doctorAppointmentPatientAtm.setVisited(Boolean.parseBoolean(appointment.getIsVisited().toString()));
+
+                        response.setStatus(true);
+                        response.setData(doctorAppointmentPatientAtm);
 
                         om.sendObject(response);
                         break;

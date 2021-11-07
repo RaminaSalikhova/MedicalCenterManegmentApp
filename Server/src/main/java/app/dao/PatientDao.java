@@ -15,5 +15,8 @@ public interface PatientDao {
     public void delete(Patient patient);
 
     public List<Patient> findAll();
+
     public Patient findPatientByUserID(long userID);
+
+    public void updateWeightAndHeight(double weight, double height, long id);
 }

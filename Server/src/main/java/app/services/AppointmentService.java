@@ -6,6 +6,7 @@ import app.dao.DistrictDao;
 import app.dao.DistrictDaoImpl;
 import app.entity.Appointment;
 import app.entity.District;
+import app.models.DataTransferModels.UpdateAppointmentDto;
 
 import java.util.List;
 
@@ -33,4 +34,9 @@ public class AppointmentService {
     }
 
     public List<Appointment> findAllByDoctorID(long doctorID){ return  appointmentDao.findAllByDoctorID(doctorID);}
-}
+    public List<Appointment> findAllByPatientID(long patientID){return  appointmentDao.findAllByPatientID(patientID);}
+    public List<Appointment> findAllByPatientIDAndDoctorID(long patientID, long doctorID){return  appointmentDao.findAllByPatientIDAndDoctorID(patientID, doctorID);}
+
+    public void updateVisit(UpdateAppointmentDto updateAppointmentDto){appointmentDao.updateVisit(updateAppointmentDto);}
+
+    }

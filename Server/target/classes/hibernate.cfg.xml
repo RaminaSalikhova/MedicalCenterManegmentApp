@@ -11,8 +11,7 @@
         <property name="hibernate.connection.pool_size">100</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">r4mina_sql_srvr</property>
-
-<!--        <property name="app.connection.url"/>-->
+        <!--        <property name="app.connection.url"/>-->
 <!--        <property name="app.connection.driver_class"></property>-->
 
         <!--         DB schema will be updated if needed-->
@@ -35,6 +34,8 @@
         <mapping resource="Specialization.hbm.xml"/>
         <mapping class="app.entity.User"/>
         <mapping resource="User.hbm.xml"/>
+        <mapping class="app.entity.Complaint"/>
+        <mapping resource="Complaint.hbm.xml"/>
 
 
     </session-factory>

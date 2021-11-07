@@ -2,10 +2,12 @@ package app.dao;
 
 import app.entity.Address;
 import app.entity.Appointment;
+import app.entity.Doctor;
 import app.entity.Patient;
 import app.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -29,6 +31,25 @@ public class PatientDaoImpl implements PatientDao{
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.update(patient);
+        tx1.commit();
+        session.close();
+    }
+
+    @Override
+    public void updateWeightAndHeight(double weight, double height, long id) {
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction tx1 = session.beginTransaction();
+
+        Query query = session.createNativeQuery(
+                "update hospital_db.Patient set weight = :paramWeight,  height = :paramHeight \n" +
+                        "where id = :id"
+        )
+                .setParameter("paramWeight", weight)
+                .setParameter("paramHeight",height)
+                .setParameter("id", id);
+
+
+        int result = query.executeUpdate();
         tx1.commit();
         session.close();
     }

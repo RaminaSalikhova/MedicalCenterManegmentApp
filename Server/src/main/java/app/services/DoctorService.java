@@ -32,4 +32,5 @@ public class DoctorService {
         return doctorDao.findAll();
     }
 
+    public Doctor findAllByUserID(long userID){return  doctorDao.findAllByUserID(userID);}
 }

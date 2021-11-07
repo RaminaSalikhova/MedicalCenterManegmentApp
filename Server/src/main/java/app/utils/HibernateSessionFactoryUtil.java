@@ -29,6 +29,7 @@ public class HibernateSessionFactoryUtil {
                 configuration.addAnnotatedClass(Doctor.class);
                 configuration.addAnnotatedClass(User.class);
                 configuration.addAnnotatedClass(Appointment.class);
+                configuration.addAnnotatedClass(Complaint.class);
 //                configuration.addAnnotatedClass(Specialization.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());

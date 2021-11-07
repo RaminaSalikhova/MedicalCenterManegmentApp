@@ -16,4 +16,6 @@ public interface DoctorDao {
 
     public List<Doctor> findAll();
 
+    public Doctor findAllByUserID(long userID);
+
 }

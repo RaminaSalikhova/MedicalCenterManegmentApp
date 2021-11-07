@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="app.entity.Complaint" table="complaint" schema="hospital_db">
+        <id name="id">
+            <column name="ID" sql-type="bigint"/>
+        </id>
+        <property name="message">
+            <column name="message" sql-type="varchar(5000)" length="5000" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

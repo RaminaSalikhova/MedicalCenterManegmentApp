@@ -1,5 +1,6 @@
 package app.dao;
 
+import app.entity.Appointment;
 import app.entity.Doctor;
 import app.entity.User;
 import app.utils.HibernateSessionFactoryUtil;
@@ -44,4 +45,22 @@ public class DoctorDaoImpl implements DoctorDao{
 
     }
 
+
+    public Doctor findAllByUserID(long userID){
+        List<Doctor> doctors = HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(
+                "select * from doctor where userID = :param ",
+                Doctor.class
+        )
+                .setParameter("param", userID)
+                .getResultList();
+
+        Doctor doctor;
+        if (doctors.size()!=0){
+            doctor=doctors.get(0);
+        }else {
+            doctor=null;
+        }
+
+        return doctor;
+    }
 }
