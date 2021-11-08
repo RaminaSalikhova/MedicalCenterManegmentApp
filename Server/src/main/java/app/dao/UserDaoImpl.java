@@ -30,6 +30,22 @@ public class UserDaoImpl implements UserDao {
         session.close();
     }
 
+    public void updateUserStatus(long id) {
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction tx1 = session.beginTransaction();
+
+        Query query = session.createNativeQuery(
+                "update hospital_db.User set status = 0 " +
+                        "where id = :id"
+        )
+                .setParameter("id", id);
+
+
+        int result = query.executeUpdate();
+        tx1.commit();
+        session.close();
+    }
+
     public void delete(User user) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();

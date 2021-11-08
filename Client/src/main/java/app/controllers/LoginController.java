@@ -23,6 +23,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class LoginController {
 
@@ -106,12 +108,24 @@ public class LoginController {
     }
 
     private String logIn() {
+        String regex = "^(.+)@(.+)$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher= pattern.matcher(txtUsername.getText());
+
         if (txtUsername.getText().isEmpty()
                 && txtPassword.getText().isEmpty()) {
+            lblErrors.setVisible(true);
             lblErrors.setTextFill(Color.TOMATO);
-            lblErrors.setText("Enter all details");
+            lblErrors.setText("Заполните все поля");
             return "Fail";
-        } else {
+        } else if(!matcher.matches())
+        {
+            lblErrors.setVisible(true);
+            lblErrors.setTextFill(Color.TOMATO);
+            lblErrors.setText("Заполните поле почты в соответсвующем формате");
+            return "Fail";
+        }
+        else {
             LoginDto loginDto = new LoginDto();
             loginDto.setLogin(txtUsername.getText());
             loginDto.setPassword(txtPassword.getText());
@@ -138,6 +152,7 @@ public class LoginController {
                 role= userAtm.getRole();
                 return "Success";
             } else {
+                lblErrors.setVisible(true);
                 lblErrors.setText(response.getMessage());
                 System.out.println(response.getMessage());
                 return "Fail";
@@ -170,6 +185,7 @@ public class LoginController {
                 System.out.println(response.getData());
                 return (UserAtm) response.getData();
             } else {
+                lblErrors.setVisible(true);
                 lblErrors.setText(response.getMessage());
                 System.out.println(response.getMessage());
                 return  (UserAtm) response.getData();

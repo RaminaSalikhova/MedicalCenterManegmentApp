@@ -14,5 +14,7 @@ public interface ComplaintDao {
 
     public void delete(Complaint complaint);
 
+    public void deleteByID(long id);
+
     public List<Complaint> findAll();
 }

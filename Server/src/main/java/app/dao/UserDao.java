@@ -12,6 +12,8 @@ public interface UserDao {
 
     public void update(User user);
 
+    public void updateUserStatus(long id);
+
     public void delete(User user);
 
     public List<User> findAll();

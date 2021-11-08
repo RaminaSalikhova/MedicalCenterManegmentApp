@@ -20,6 +20,8 @@ import app.models.DataTransferModels.RegistrationDto;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class RegistrationController {
@@ -82,6 +84,16 @@ public class RegistrationController {
 
     private void createPressed() {
         //check if all fields are filled
+        String regex = "^(.+)@(.+)$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher= pattern.matcher(txtUsername.getText());
+
+        String numberRegex =  "^(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$"
+                + "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{3}$"
+                + "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?)(\\d{2}[ ]?){2}\\d{2}$";
+        Pattern patterNumber = Pattern.compile(numberRegex);
+        Matcher matcherNumber = patterNumber.matcher(txtPhoneNumber.getText());
+
         if (txtFirstName.getText().isEmpty()
                 && txtLastName.getText().isEmpty()
                 && txtPhoneNumber.getText().isEmpty()
@@ -89,13 +101,25 @@ public class RegistrationController {
                 && txtPassword.getText().isEmpty()
                 && txtPatronymic.getText().isEmpty())
         {
+            lblErrors.setVisible(true);
             lblErrors.setTextFill(Color.TOMATO);
-            lblErrors.setText("Enter all details");
+            lblErrors.setText("Заполните все поля");
+        }else if(!matcher.matches())
+        {
+            lblErrors.setVisible(true);
+            lblErrors.setTextFill(Color.TOMATO);
+            lblErrors.setText("Заполните поле почты в соответсвующем формате");
+        }else if(!matcherNumber.matches())
+        {
+            lblErrors.setVisible(true);
+            lblErrors.setTextFill(Color.TOMATO);
+            lblErrors.setText("Заполните поле номера телефона в соответсвующем формате");
         }
         LocalDate value=txtDob.getValue();
         if(value==null){
+            lblErrors.setVisible(true);
             lblErrors.setTextFill(Color.TOMATO);
-            lblErrors.setText("Enter all details");
+            lblErrors.setText("Заполните все поля");
         }
 
 
@@ -118,6 +142,10 @@ public class RegistrationController {
                     registrationDto.setRole(ROLE_TYPE.DOCTOR.toString());
                 }else if( txtPasscode.getText().equals("222")){
                     registrationDto.setRole(ROLE_TYPE.ADMIN.toString());
+                }else {
+                    lblErrors.setVisible(true);
+                    lblErrors.setTextFill(Color.TOMATO);
+                    lblErrors.setText("Неверный код доступа");
                 }
             }else {
                 registrationDto.setRole(ROLE_TYPE.PATIENT.toString());
@@ -139,10 +167,12 @@ public class RegistrationController {
                 e.printStackTrace();
             }
             if (response.getStatus() == true) {
+                lblErrors.setVisible(true);
                 lblErrors.setText(response.getData().toString());
                 System.out.println(response.getData());
 
             } else {
+                lblErrors.setVisible(true);
                 lblErrors.setText(response.getMessage());
                 System.out.println(response.getMessage());
             }

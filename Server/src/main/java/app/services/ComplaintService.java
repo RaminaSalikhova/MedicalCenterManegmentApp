@@ -28,6 +28,8 @@ public class ComplaintService {
         complaintDao.delete(complaint);
     }
 
+    public void deleteByID(long id){complaintDao.deleteByID(id);}
+
     public List<Complaint> findAll() {
         return complaintDao.findAll();
     }

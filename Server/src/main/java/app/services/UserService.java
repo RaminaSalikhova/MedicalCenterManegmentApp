@@ -22,6 +22,8 @@ public class UserService {
         userDao.update(user);
     }
 
+    public void updateUserStatus(long id){userDao.updateUserStatus(id);}
+
     public void delete(User user) {
         userDao.delete(user);
     }

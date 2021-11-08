@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.RegistrationController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.RegistrationController">
     <children>
         <ImageView fitHeight="640" fitWidth="1024" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="109.0" AnchorPane.topAnchor="0.0">
             <image>
@@ -17,14 +17,14 @@
         <Pane layoutY="-3.0" opacity="0.78" prefHeight="646.0" prefWidth="1030.0" style="-fx-background-color: #000000;">
             <children>
 
-                <JFXTextField fx:id="txtFirstName" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="69.0" prefHeight="31.0" prefWidth="384.0" promptText="ИМЯ" unFocusColor="WHITE" />
-                <JFXTextField fx:id="txtLastName" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="130.0" prefHeight="31.0" prefWidth="384.0" promptText="ФАМИЛИЯ" unFocusColor="WHITE" />
-                <JFXTextField fx:id="txtUsername" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="380.0" prefHeight="31.0" prefWidth="384.0" promptText="ЛОГИН" unFocusColor="WHITE" />
-                <JFXTextField fx:id="txtPatronymic" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="186.0" prefHeight="31.0" prefWidth="384.0" promptText="ОТЧЕСТВО" unFocusColor="WHITE" />
+                <JFXTextField fx:id="txtFirstName" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="69.0" prefHeight="31.0" prefWidth="568.0" promptText="ИМЯ" unFocusColor="WHITE" />
+                <JFXTextField fx:id="txtLastName" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="130.0" prefHeight="31.0" prefWidth="568.0" promptText="ФАМИЛИЯ" unFocusColor="WHITE" />
+                <JFXTextField fx:id="txtUsername" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="380.0" prefHeight="31.0" prefWidth="568.0" promptText="E-MAIL" unFocusColor="WHITE" />
+                <JFXTextField fx:id="txtPatronymic" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="186.0" prefHeight="31.0" prefWidth="568.0" promptText="ОТЧЕСТВО" unFocusColor="WHITE" />
                 <DatePicker fx:id="txtDob" editable="false" layoutX="349.0" layoutY="254.0" prefHeight="31.0" prefWidth="384.0" promptText="ДАТА РОЖДЕНИЯ" style="-fx-background-color: #D7D7D7;" />
-                <JFXPasswordField fx:id="txtPassword" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="441.0" prefHeight="31.0" prefWidth="384.0" promptText="ПАРОЛЬ" unFocusColor="WHITE" />
-                <JFXTextField fx:id="txtPhoneNumber" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="320.0" prefHeight="31.0" prefWidth="384.0" promptText="НОМЕР ТЕЛЕФОНА" unFocusColor="WHITE" />
-                <JFXButton fx:id="btnCreate" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="173.0" style="-fx-background-color: #05668D; -fx-background-radius: 10;" text="РЕГИСТРАЦИЯ" textFill="WHITE">
+                <JFXPasswordField fx:id="txtPassword" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="441.0" prefHeight="31.0" prefWidth="568.0" promptText="ПАРОЛЬ" unFocusColor="WHITE" />
+                <JFXTextField fx:id="txtPhoneNumber" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="320.0" prefHeight="31.0" prefWidth="568.0" promptText="НОМЕР ТЕЛЕФОНА" unFocusColor="WHITE" />
+                <JFXButton fx:id="btnCreate" alignment="CENTER" layoutX="647.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="173.0" style="-fx-background-color: #05668D; -fx-background-radius: 10;" text="РЕГИСТРАЦИЯ" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
@@ -32,12 +32,12 @@
                         <Insets />
                     </opaqueInsets>
                 </JFXButton>
-                <Label fx:id="lblErrors" alignment="CENTER" layoutX="442.0" layoutY="24.0" prefHeight="31.0" prefWidth="284.0" text="Ошибка" textAlignment="CENTER">
+                <Label fx:id="lblErrors" alignment="CENTER" layoutX="345.0" layoutY="24.0" prefHeight="31.0" prefWidth="580.0" text="Ошибка" textAlignment="CENTER" visible="false">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <JFXButton fx:id="btnSignIn" alignment="CENTER" layoutX="71.0" layoutY="134.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="203.0" style="-fx-border-color: #fff; -fx-border-radius: 10;" text="АВТОРИЗАЦИЯ" textFill="#05668d">
+                <JFXButton fx:id="btnSignIn" alignment="CENTER" layoutX="66.0" layoutY="134.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="203.0" style="-fx-border-color: #fff; -fx-border-radius: 10;" text="АВТОРИЗАЦИЯ" textFill="#05668d">
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
@@ -53,7 +53,7 @@
                         <Insets />
                     </opaqueInsets>
                 </JFXButton>
-                <JFXButton fx:id="btnReset" alignment="CENTER" layoutX="349.0" layoutY="510.0" onAction="#reset" prefHeight="54.0" prefWidth="173.0" style="-fx-background-color: #05668D; -fx-background-radius: 10;" text="ОЧИСТИТЬ" textFill="WHITE">
+                <JFXButton fx:id="btnReset" alignment="CENTER" layoutX="443.0" layoutY="510.0" onAction="#reset" prefHeight="54.0" prefWidth="173.0" style="-fx-background-color: #05668D; -fx-background-radius: 10;" text="ОЧИСТИТЬ" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>

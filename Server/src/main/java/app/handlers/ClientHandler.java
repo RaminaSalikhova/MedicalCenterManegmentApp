@@ -475,6 +475,119 @@ public class ClientHandler extends Thread {
                         om.sendObject(response);
                         break;
                     }
+                    case getUserList: {
+                        ServerResponse response = new ServerResponse<GetUserListAtm>();
+
+                        UserService userService = new UserService();
+                        List<User> userList = userService.findAll();
+                        List<GetUserListAtm> userListAtms = new ArrayList<>();
+                        for (User user : userList) {
+                            GetUserListAtm getUserListAtm = new GetUserListAtm();
+                            getUserListAtm.setUserID(user.getId());
+                            getUserListAtm.setFirst_name(user.getFirstName());
+                            getUserListAtm.setLast_name(user.getLastName());
+                            getUserListAtm.setPatronymic(user.getPatronymic());
+                            getUserListAtm.setLogin(user.getLogin());
+                            getUserListAtm.setRole(user.getRole());
+                            getUserListAtm.setPhoneNum(user.getPhoneNum());
+                            getUserListAtm.setStatus(user.getStatus());
+                            userListAtms.add(getUserListAtm);
+                        }
+                        response.setStatus(true);
+                        response.setData(userListAtms);
+
+                        om.sendObject(response);
+                        break;
+                    }
+                    case getCommentList: {
+                        ServerResponse response = new ServerResponse<GetCommentListAtm>();
+
+                        ComplaintService complaintService = new ComplaintService();
+                        List<Complaint> complaints = complaintService.findAll();
+                        List<GetCommentListAtm> commentListAtms = new ArrayList<>();
+                        for (Complaint complaint : complaints) {
+                            GetCommentListAtm getCommentListAtm = new GetCommentListAtm();
+                            getCommentListAtm.setCommentID(complaint.getId());
+                            getCommentListAtm.setMessage(complaint.getMessage());
+                            commentListAtms.add(getCommentListAtm);
+                        }
+                        response.setStatus(true);
+                        response.setData(commentListAtms);
+
+                        om.sendObject(response);
+                        break;
+                    }
+                    case getDoctorsAndAppointmentCountDto: {
+                        ServerResponse response = new ServerResponse<GetDoctorsAndAppointmentCountAtm>();
+
+                        DoctorService doctorService = new DoctorService();
+                        List<Doctor> doctorList = doctorService.findAll();
+
+                        List<GetDoctorsAndAppointmentCountAtm> getDoctorsAndAppointmentCountAtmList = new ArrayList<>();
+                        GetDoctorsAndAppointmentCountAtm getDoctorsAndAppointmentCountAtm = new GetDoctorsAndAppointmentCountAtm();
+                        for (Doctor doctor : doctorList) {
+
+                            UserService userService = new UserService();
+                            User user = userService.findById(doctor.getUserId());
+
+                            AppointmentService appointmentService = new AppointmentService();
+                            List<Appointment> appointmentList = appointmentService.findAllByDoctorID(doctor.getId());
+
+                            String name = user.getFirstName();
+                            name.concat(" ");
+                            name.concat(user.getLastName());
+                            name.concat(" ");
+                            name.concat(user.getPatronymic());
+                            getDoctorsAndAppointmentCountAtm.setDoctorName(name);
+                            getDoctorsAndAppointmentCountAtm.setAppointmentsCount(appointmentList.size());
+                        }
+                        getDoctorsAndAppointmentCountAtmList.add(getDoctorsAndAppointmentCountAtm);
+                        response.setStatus(true);
+                        response.setData(getDoctorsAndAppointmentCountAtmList);
+
+                        om.sendObject(response);
+                        break;
+                    }
+                    case sendMail:{
+                        UserService userService=new UserService();
+                        List<User> users=userService.findAll();
+                        List<String> emails=new ArrayList<>();
+                        for(User user:users){
+                            emails.add(user.getLogin());
+                        }
+                        EmailService emailService=new EmailService();
+                        SendMailDto sendMailDto= (SendMailDto) req.getData();
+                        emailService.send(sendMailDto.getText(),emails);
+
+                        ServerResponse response = new ServerResponse<String>();
+                        response.setData("Успешно");
+                        response.setStatus(true);
+                        break;
+                    }
+                    case deleteUser:{
+                        ServerResponse response = new ServerResponse<String>();
+
+                        DeleteUserDto deleteUserDto;
+                        deleteUserDto = (DeleteUserDto) req.getData();
+                        UserService userService = new UserService();
+                        userService.updateUserStatus(deleteUserDto.getUserID());
+                        response.setStatus(true);
+
+                        om.sendObject(response);
+                        break;
+                    }
+                    case deleteComment:{
+                        ServerResponse response = new ServerResponse<String>();
+
+                        DeleteCommentDto deleteCommentDto;
+                        deleteCommentDto = (DeleteCommentDto) req.getData();
+                        ComplaintService complaintService = new ComplaintService();
+                        complaintService.deleteByID(deleteCommentDto.getCommentID());
+                        response.setStatus(true);
+
+                        om.sendObject(response);
+                        break;
+                    }
                     case close: {
                         s.close();
                         dis.close();

@@ -13,5 +13,11 @@ public enum HANDLER_TYPE {
     sendComplaint,
     getPatientList,
     updateAppointmentDto,
-    getPatientAppointment
+    getPatientAppointment,
+    getUserList,
+    getCommentList,
+    getDoctorsAndAppointmentCountDto,
+    sendMail,
+    deleteUser,
+    deleteComment
 }
