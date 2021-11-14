@@ -18,4 +18,6 @@ public interface DoctorDao {
 
     public Doctor findAllByUserID(long userID);
 
+    public List<Doctor> findAllNotNull();
+
 }

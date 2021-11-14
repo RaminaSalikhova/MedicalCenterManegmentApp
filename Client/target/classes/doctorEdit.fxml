@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.DoctorEditController">
+    <children>
+        <ImageView fitHeight="713.0" fitWidth="1206.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-69.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-65.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@../resources/images/dashboard.jpg" />
+            </image>
+        </ImageView>
+        <Pane layoutX="-18.0" layoutY="15.0" opacity="0.78" prefHeight="629.0" prefWidth="1141.0" style="-fx-background-color: #000000;">
+            <children>
+                <Label layoutX="383.0" layoutY="14.0" text="Доктора" />
+                <BorderPane layoutX="56.0" layoutY="41.0" prefHeight="144.0" prefWidth="724.0">
+                    <center>
+                        <ScrollPane disable="false" prefHeight="7861.0" prefWidth="1143.0" visible="true" />
+                        <TableView fx:id="tableViewDoctors" layoutX="304.0" layoutY="129.0" prefHeight="147.0" prefWidth="748.0">
+                            <columns>
+                                <TableColumn fx:id="idColumnIDUser" prefWidth="119.33334350585938" text="ID" visible="false" />
+                                <TableColumn fx:id="idColumnIDDoctor" prefWidth="119.33334350585938" text="ID" visible="false" />
+                                <TableColumn fx:id="idColumnFirstName" prefWidth="119.33334350585938" text="Имя" visible="false" />
+                                <TableColumn fx:id="idColumnLastName" prefWidth="119.33334350585938" text="Фамилия" />
+                                <TableColumn fx:id="idColumnPatronymic" prefWidth="136.0" text="Отчество" />
+                                <TableColumn fx:id="idColumnPhoneNum" minWidth="0.0" prefWidth="74.33331298828125" text="Номер телефона" />
+                                <TableColumn fx:id="idColumnFrom" prefWidth="114.33331298828125" text="Время приема: с" />
+                                <TableColumn fx:id="idColumnTill" prefWidth="114.33331298828125" text="Время приема: до" />
+                                <TableColumn fx:id="idColumnRoom" prefWidth="114.33331298828125" text="Кабинет" />
+                                <TableColumn fx:id="idColumnSpecialization" prefWidth="114.33331298828125" text="Специализация" />
+                                <TableColumn fx:id="idColumnDistrict" prefWidth="114.33331298828125" text="Участок" />
+                                <TableColumn fx:id="idColumnSalary" prefWidth="114.33331298828125" text="Оклад" />
+                                <TableColumn fx:id="idColumnExperience" prefWidth="114.33331298828125" text="Опыт работы" />
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+                <Label layoutX="383.0" layoutY="14.0" text="Участки" />
+                <HBox id="HBox" alignment="CENTER" layoutX="56.0" layoutY="331.0" spacing="5.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="869.9999999999999" AnchorPane.topAnchor="331.0">
+                    <children>
+                        <Label text="Filter Table:" />
+                        <TextField fx:id="filterField" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+                    </children>
+                </HBox>
+                <BorderPane layoutX="56.0" layoutY="357.0" prefHeight="144.0" prefWidth="724.0">
+                    <center>
+                        <ScrollPane disable="false" prefHeight="7861.0" prefWidth="1143.0" visible="true" />
+                        <TableView fx:id="tableViewDistricts" layoutX="304.0" layoutY="129.0" prefHeight="147.0" prefWidth="748.0">
+                            <columns>
+                                <TableColumn fx:id="idColumnIDDistrict" prefWidth="119.33334350585938" text="ID" visible="false" />
+                                <TableColumn fx:id="idColumnIDAddress" prefWidth="119.33334350585938" text="ID" visible="false" />
+                                <TableColumn fx:id="idColumnIDDistrictName" prefWidth="119.33334350585938" text="Участок" />
+                                <TableColumn fx:id="idColumnAddressName" prefWidth="119.33334350585938" text="Улица" />
+                                <TableColumn fx:id="idColumnAddressHouse" prefWidth="119.33334350585938" text="Дом" />
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

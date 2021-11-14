@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.*?>
 <?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -13,8 +14,13 @@
                 <Image url="@../resources/images/dashboard.jpg" />
             </image>
         </ImageView>
-        <Pane layoutX="58.0" layoutY="-1.0" opacity="0.78" prefHeight="714.0" prefWidth="1149.0" style="-fx-background-color: #000000;">
+        <Pane layoutX="-9.0" layoutY="-3.0" opacity="0.78" prefHeight="714.0" prefWidth="1149.0" style="-fx-background-color: #000000;">
             <children>
+                <Label fx:id="lblErrors" alignment="CENTER" layoutX="345.0" layoutY="24.0" prefHeight="31.0" prefWidth="580.0" text="Ошибка" textAlignment="CENTER" visible="false">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
                 <JFXButton fx:id="backBtn" alignment="CENTER" layoutX="42.0" layoutY="26.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="208.0" style="-fx-background-color: #05668D;" text="Назад" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="18.0" />
@@ -23,13 +29,34 @@
                         <Insets />
                     </opaqueInsets>
                 </JFXButton>
+<!--                <JFXRadioButton fx:id="txtSex" layoutX="349.0" layoutY="250.0" prefHeight="31.0" prefWidth="384.0" text="Муж"/>-->
+<!--                <JFXRadioButton fx:id="txtSex" layoutX="349.0" layoutY="250.0" prefHeight="31.0" prefWidth="384.0" text="Муж" />-->
+
+                <RadioButton fx:id="radioButton" layoutX="453.0" layoutY="254.0" text="Муж">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="group" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="radioButton2" layoutX="349.0" layoutY="254.0" selected="true" text="Жен" toggleGroup="$group" />
+
+                <!--                <Label>Адрес</Label>-->
+
+<!--                <fx:define>-->
+<!--                    <Integer fx:id="min" fx:value="0"/>-->
+<!--                    <Integer fx:id="max" fx:value="10"/>-->
+<!--                </fx:define>-->
+<!--                <Spinner fx:id="spinner" BorderPane.alignment="CENTER" min="$min" max="$max">-->
+<!--                </Spinner>-->
+
+<!--                <JFXTextField fx:id="txtHouse" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="69.0"-->
+<!--                              prefHeight="31.0" prefWidth="384.0" promptText="Улица" unFocusColor="WHITE"/>-->
                 <JFXTextField fx:id="txtHeight" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="69.0" prefHeight="31.0" prefWidth="384.0" promptText="Рост" unFocusColor="WHITE" />
                 <JFXTextField fx:id="txtWeight" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="130.0" prefHeight="31.0" prefWidth="384.0" promptText="Вес" unFocusColor="WHITE" />
                 <JFXTextField fx:id="txtDiagnosis" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="380.0" prefHeight="31.0" prefWidth="384.0" promptText="Диагноз" unFocusColor="WHITE" />
                 <JFXTextField fx:id="txtRecommendation" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="186.0" prefHeight="31.0" prefWidth="384.0" promptText="Рекомендации" unFocusColor="WHITE" />
                 <JFXTextField fx:id="txtReport" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="320.0" prefHeight="31.0" prefWidth="384.0" promptText="Заключение" unFocusColor="WHITE" />
-                <JFXCheckBox fx:id="checkBox" onAction="#onCheckBoxAction" layoutX="349.0" layoutY="444.0" text="Пришел" />
-                <JFXButton fx:id="submitBtn" layoutX="349.0" layoutY="495.0" text="Подтвердить"  alignment="CENTER" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="208.0" style="-fx-background-color: #05668D;"  textFill="WHITE" >
+                <JFXCheckBox fx:id="checkBox" layoutX="349.0" layoutY="444.0" onAction="#onCheckBoxAction" text="Пришел" />
+                <JFXButton fx:id="submitBtn" alignment="CENTER" layoutX="349.0" layoutY="495.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="208.0" style="-fx-background-color: #05668D;" text="Подтвердить" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
@@ -37,22 +64,22 @@
                         <Insets />
                     </opaqueInsets>
                 </JFXButton>
-<!--                <BorderPane layoutX="310.0" layoutY="72.0" prefHeight="441.0" prefWidth="757.0">-->
-<!--                    <center>-->
-<!--                        <ScrollPane disable="false" prefHeight="0.0" prefWidth="757.0" visible="true">-->
-<!--                            <content>-->
-<!--                                <TableView fx:id="myTableView" prefHeight="450.0" prefWidth="825.0">-->
-<!--                                    <columns>-->
-<!--                                        <TableColumn fx:id="idColumnID" prefWidth="119.33334350585938" text="ID"-->
-<!--                                                     visible="false"/>-->
-<!--                                        <TableColumn fx:id="idColumnHeight" prefWidth="94.3333740234375" text="Рост"/>-->
-<!--                                        <TableColumn fx:id="idColumnWeight" prefWidth="94.3333740234375" text="Вес"/>-->
-<!--                                    </columns>-->
-<!--                                </TableView>-->
-<!--                            </content>-->
-<!--                        </ScrollPane>-->
-<!--                    </center>-->
-<!--                </BorderPane>-->
+                <!--                <BorderPane layoutX="310.0" layoutY="72.0" prefHeight="441.0" prefWidth="757.0">-->
+                <!--                    <center>-->
+                <!--                        <ScrollPane disable="false" prefHeight="0.0" prefWidth="757.0" visible="true">-->
+                <!--                            <content>-->
+                <!--                                <TableView fx:id="myTableView" prefHeight="450.0" prefWidth="825.0">-->
+                <!--                                    <columns>-->
+                <!--                                        <TableColumn fx:id="idColumnID" prefWidth="119.33334350585938" text="ID"-->
+                <!--                                                     visible="false"/>-->
+                <!--                                        <TableColumn fx:id="idColumnHeight" prefWidth="94.3333740234375" text="Рост"/>-->
+                <!--                                        <TableColumn fx:id="idColumnWeight" prefWidth="94.3333740234375" text="Вес"/>-->
+                <!--                                    </columns>-->
+                <!--                                </TableView>-->
+                <!--                            </content>-->
+                <!--                        </ScrollPane>-->
+                <!--                    </center>-->
+                <!--                </BorderPane>-->
             </children>
         </Pane>
         <!--        <VBox blendMode="ADD" prefHeight="640.0" prefWidth="224.0" style="-fx-background-color: #05668D;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">-->

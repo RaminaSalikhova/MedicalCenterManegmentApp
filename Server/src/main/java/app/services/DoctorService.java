@@ -33,4 +33,6 @@ public class DoctorService {
     }
 
     public Doctor findAllByUserID(long userID){return  doctorDao.findAllByUserID(userID);}
+
+    public List<Doctor> findAllNotNull(){return doctorDao.findAllNotNull();}
 }

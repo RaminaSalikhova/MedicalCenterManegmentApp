@@ -8,61 +8,47 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0"
-            xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="app.controllers.DoctorHomeController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.DoctorHomeController">
     <children>
-        <ImageView fitHeight="640" fitWidth="1024" pickOnBounds="true" preserveRatio="true"
-                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="109.0"
-                   AnchorPane.topAnchor="0.0">
+        <ImageView fitHeight="687.0" fitWidth="1057.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-47.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-33.0" AnchorPane.topAnchor="0.0">
             <image>
-                <Image url="@../resources/images/dashboard.jpg"/>
+                <Image url="@../resources/images/pablo-fighting-a-virus.png" />
             </image>
         </ImageView>
 
-        <Pane layoutX="-22.0" layoutY="-6.0" opacity="0.78" prefHeight="646.0" prefWidth="1046.0"
-              style="-fx-background-color: #000000;">
+        <Pane layoutX="-22.0" layoutY="-6.0" opacity="0.78" prefHeight="646.0" prefWidth="1046.0" style="-fx-background-color: #000000;">
             <children>
-                <JFXButton fx:id="backBtn" alignment="CENTER" layoutX="37.0" layoutY="421.0"
-                           onAction="#handleButtonClicks"
-                           prefHeight="54.0" prefWidth="208.0" style="-fx-background-color: #05668D;" text="Назад"
-                           textFill="WHITE">
+                <JFXButton fx:id="backBtn" alignment="CENTER" layoutX="37.0" layoutY="421.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="208.0" style="-fx-background-color: #05668D;" text="Назад" textFill="WHITE">
                     <font>
-                        <Font name="System Bold" size="18.0"/>
+                        <Font name="System Bold" size="18.0" />
                     </font>
                     <opaqueInsets>
-                        <Insets/>
+                        <Insets />
                     </opaqueInsets>
                 </JFXButton>
                 <BorderPane layoutX="56.0" layoutY="41.0" prefHeight="266.0" prefWidth="880.0">
                     <center>
-                        <ScrollPane disable="false" prefHeight="7861.0" prefWidth="1143.0" visible="true"/>
-                        <TableView fx:id="tableView" layoutX="304.0" layoutY="129.0" prefHeight="450.0"
-                                   prefWidth="825.0">
+                        <ScrollPane disable="false" prefHeight="7861.0" prefWidth="1143.0" visible="true" />
+                        <TableView fx:id="tableView" layoutX="304.0" layoutY="129.0" prefHeight="450.0" prefWidth="825.0">
                             <columns>
-                                <TableColumn fx:id="idColumnID" prefWidth="119.33334350585938" text="ID"
-                                             visible="false"/>
-                                <TableColumn fx:id="idColumnIDpatient" prefWidth="119.33334350585938" text="ID"
-                                             visible="false"/>
-                                <TableColumn fx:id="idColumnFirstName" prefWidth="119.33334350585938" text="Имя"/>
-                                <TableColumn fx:id="idColumnLastName" prefWidth="136.0" text="Фамилия"/>
-                                <TableColumn fx:id="idColumnPatronymic" prefWidth="123.6666259765625" text="Отчество"/>
-                                <TableColumn fx:id="idColumnAddress" prefWidth="193.0" text="Адрес"/>
-                                <TableColumn fx:id="idColumnSex" minWidth="0.0" prefWidth="74.33331298828125"
-                                             text="Пол"/>
-                                <TableColumn fx:id="idColumnTime" prefWidth="114.33331298828125" text="Время приема"/>
+                                <TableColumn fx:id="idColumnID" prefWidth="119.33334350585938" text="ID" visible="false" />
+                                <TableColumn fx:id="idColumnIDpatient" prefWidth="119.33334350585938" text="ID" visible="false" />
+                                <TableColumn fx:id="idColumnFirstName" prefWidth="119.33334350585938" text="Имя" />
+                                <TableColumn fx:id="idColumnLastName" prefWidth="136.0" text="Фамилия" />
+                                <TableColumn fx:id="idColumnPatronymic" prefWidth="123.6666259765625" text="Отчество" />
+                                <TableColumn fx:id="idColumnAddress" prefWidth="193.0" text="Адрес" />
+                                <TableColumn fx:id="idColumnSex" minWidth="0.0" prefWidth="74.33331298828125" text="Пол" />
+                                <TableColumn fx:id="idColumnTime" prefWidth="114.33331298828125" text="Время приема" />
                             </columns>
                         </TableView>
                     </center>
                 </BorderPane>
-                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="596.0" layoutY="14.0" prefHeight="27.0"
-                       prefWidth="123.0" text="Приемы" textAlignment="CENTER">
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="596.0" layoutY="14.0" prefHeight="27.0" prefWidth="123.0" text="Приемы" textAlignment="CENTER">
                     <font>
-                        <Font size="18.0"/>
+                        <Font size="18.0" />
                     </font>
                 </Label>
-                <PieChart fx:id="chart" layoutX="257.0" layoutY="352.0" prefHeight="208.0" prefWidth="239.0"
-                          title="Приемы"/>
+                <PieChart fx:id="chart" layoutX="257.0" layoutY="352.0" prefHeight="208.0" prefWidth="239.0" title="Приемы" />
             </children>
         </Pane>
     </children>

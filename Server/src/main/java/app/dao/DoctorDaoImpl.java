@@ -45,6 +45,18 @@ public class DoctorDaoImpl implements DoctorDao{
 
     }
 
+    public List<Doctor> findAllNotNull(){
+        List<Doctor> doctors = HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(
+                "select * from doctor where specializationID AND scheduleID AND districtID is not NULL ",
+                Doctor.class
+        )
+                .getResultList();
+
+//        String sql = "From " + Doctor.class.getSimpleName();
+//        List<Doctor> doctors = (List<Doctor>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(sql).list();
+        return doctors;
+
+    }
 
     public Doctor findAllByUserID(long userID){
         List<Doctor> doctors = HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(

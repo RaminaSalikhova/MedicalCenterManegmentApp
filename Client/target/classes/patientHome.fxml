@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.PatientHomeController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.PatientHomeController">
    <children>
       <ImageView fitHeight="640" fitWidth="1024" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="109.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../resources/images/dashboard.jpg" />
+            <Image url="@../resources/images/clip-doc-i-need-your-help.png" />
          </image>
       </ImageView>
    <Pane layoutX="-20.0" layoutY="-3.0" opacity="0.78" prefHeight="646.0" prefWidth="1046.0" style="-fx-background-color: #000000;">
@@ -21,7 +21,7 @@
             <JFXTextField fx:id="txtPatronymic" disable="true" focusColor="#a2d2ff" labelFloat="true" layoutX="287.0" layoutY="276.0" prefHeight="31.0" prefWidth="236.0" promptText="ОТЧЕСТВО" unFocusColor="WHITE" />
             <JFXTextField fx:id="txtDob" disable="true" focusColor="#a2d2ff" labelFloat="true" layoutX="294.0" layoutY="395.0" prefHeight="31.0" prefWidth="236.0" promptText="ДАТА РОЖДЕНИЯ" unFocusColor="WHITE" />
             <JFXTextField fx:id="txtPhoneNumber" focusColor="#a2d2ff" labelFloat="true" layoutX="665.0" layoutY="84.0" prefHeight="31.0" prefWidth="260.0" promptText="НОМЕР ТЕЛЕФОНА" unFocusColor="WHITE" />
-            <JFXTextField fx:id="txtUsername" focusColor="#a2d2ff" labelFloat="true" layoutX="662.0" layoutY="183.0" prefHeight="31.0" prefWidth="260.0" promptText="ЛОГИН" unFocusColor="WHITE" />
+            <JFXTextField fx:id="txtUsername" focusColor="#a2d2ff" labelFloat="true" layoutX="662.0" layoutY="183.0" prefHeight="31.0" prefWidth="260.0" promptText="E-MAIL" unFocusColor="WHITE" />
             <Label layoutX="568.0" layoutY="38.0" prefHeight="20.0" prefWidth="181.0" text="ВАШИ ЛИЧНЫЕ ДАННЫЕ" textFill="WHITE">
                <font>
                   <Font size="14.0" />
@@ -41,7 +41,7 @@
                   <Insets top="5.0" />
                </VBox.margin>
             </JFXButton>
-            <Label fx:id="lblErrors" alignment="CENTER" layoutX="662.0" layoutY="252.0" prefHeight="31.0" prefWidth="284.0" text="Ошибка" textAlignment="CENTER">
+            <Label fx:id="lblErrors" alignment="CENTER" layoutX="662.0" layoutY="252.0" prefHeight="31.0" prefWidth="284.0" text="Ошибка" textAlignment="CENTER" visible="false">
                <font>
                   <Font size="18.0" />
                </font>

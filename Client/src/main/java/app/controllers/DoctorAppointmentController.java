@@ -24,9 +24,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
@@ -51,6 +49,12 @@ public class DoctorAppointmentController implements Initializable {
     private JFXCheckBox checkBox;
     @FXML
     private Label lblErrors;
+
+    @FXML
+    private ToggleGroup group;
+
+    @FXML
+    private RadioButton radioButton, radioButton2;
 
     long patientId;
 
@@ -118,7 +122,12 @@ public class DoctorAppointmentController implements Initializable {
         txtReport.setText(doctorAppointmentPatientAtm.getReport());
         txtRecommendation.setText(doctorAppointmentPatientAtm.getRecommendation());
         txtWeight.setText(String.valueOf(doctorAppointmentPatientAtm.getWeight()));
+        if (doctorAppointmentPatientAtm.getSex().equals("жен")) {
+            group.selectToggle(radioButton2);
 
+        }else {
+            group.selectToggle(radioButton);
+        }
     }
 
     private void updateAppointment() {
@@ -138,7 +147,11 @@ public class DoctorAppointmentController implements Initializable {
             if (checkBox.isSelected()) {
                 updateAppointmentDto.setVisited(true);
             }
-
+            if (radioButton2.isSelected()) {
+                updateAppointmentDto.setSex("жен");
+            }else {
+                updateAppointmentDto.setSex("муж");
+            }
             ClientRequest<UpdateAppointmentDto> request = new ClientRequest<>();
             request.setType(HANDLER_TYPE.updateAppointmentDto);
             request.setData(updateAppointmentDto);

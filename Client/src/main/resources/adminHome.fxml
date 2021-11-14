@@ -15,7 +15,7 @@
                 <Image url="@../resources/images/dashboard.jpg" />
             </image>
         </ImageView>
-        <Pane layoutX="-20.0" layoutY="15.0" opacity="0.78" prefHeight="629.0" prefWidth="1141.0" style="-fx-background-color: #000000;">
+        <Pane layoutX="-18.0" layoutY="15.0" opacity="0.78" prefHeight="629.0" prefWidth="1141.0" style="-fx-background-color: #000000;">
          <children>
              <BorderPane layoutX="56.0" layoutY="41.0" prefHeight="144.0" prefWidth="724.0">
                  <center>
@@ -53,6 +53,14 @@
                         <Insets />
                     </opaqueInsets>
                 </JFXButton>
+             <JFXButton fx:id="doctorBtn" alignment="CENTER" layoutX="802.0" layoutY="113.0" onAction="#handleButtonClicks" prefHeight="48.0" prefWidth="155.0" style="-fx-background-color: #05668D;" text="Доктора" textFill="WHITE">
+                 <font>
+                     <Font name="System Bold" size="18.0" />
+                 </font>
+                 <opaqueInsets>
+                     <Insets />
+                 </opaqueInsets>
+             </JFXButton>
              <JFXTextArea fx:id="textarea" focusColor="WHITE" layoutX="580.0" layoutY="396.0" prefHeight="153.0" prefWidth="373.0" promptText="Разослать всем пациентам" unFocusColor="#e8e0e0">
                  <font>
                      <Font size="19.0" />

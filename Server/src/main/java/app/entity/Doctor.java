@@ -40,7 +40,7 @@ public class Doctor {
     }
 
     @Basic
-    @Column(name = "scheduleID", nullable = false, insertable = false, updatable = false)
+    @Column(name = "scheduleID", nullable = true, insertable = false, updatable = false)
     public long getScheduleId() {
         return scheduleId;
     }
@@ -50,7 +50,7 @@ public class Doctor {
     }
 
     @Basic
-    @Column(name = "specializationID", nullable = false, insertable = false, updatable = false)
+    @Column(name = "specializationID", nullable = true, insertable = false, updatable = false)
     public long getSpecializationId() {
         return specializationId;
     }
@@ -60,7 +60,7 @@ public class Doctor {
     }
 
     @Basic
-    @Column(name = "districtID", nullable = false, insertable = false, updatable = false)
+    @Column(name = "districtID", nullable = true, insertable = false, updatable = false)
     public long getDistrictId() {
         return districtId;
     }
@@ -122,7 +122,7 @@ public class Doctor {
     }
 
     @ManyToOne
-    @JoinColumn(name = "scheduleID", referencedColumnName = "ID", nullable = false)
+    @JoinColumn(name = "scheduleID", referencedColumnName = "ID", nullable = true)
     public Schedule getScheduleByScheduleId() {
         return scheduleByScheduleId;
     }
@@ -132,7 +132,7 @@ public class Doctor {
     }
 
     @ManyToOne
-    @JoinColumn(name = "specializationID", referencedColumnName = "ID", nullable = false)
+    @JoinColumn(name = "specializationID", referencedColumnName = "ID", nullable = true)
     public Specialization getSpecializationBySpecializationId() {
         return specializationBySpecializationId;
     }
@@ -142,7 +142,7 @@ public class Doctor {
     }
 
     @ManyToOne
-    @JoinColumn(name = "districtID", referencedColumnName = "ID", nullable = false)
+    @JoinColumn(name = "districtID", referencedColumnName = "ID", nullable = true)
     public District getDistrictByDistrictId() {
         return districtByDistrictId;
     }

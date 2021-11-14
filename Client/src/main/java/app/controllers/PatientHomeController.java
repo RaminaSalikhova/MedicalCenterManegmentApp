@@ -25,6 +25,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PatientHomeController implements Initializable{
 
@@ -117,13 +119,35 @@ public class PatientHomeController implements Initializable{
     }
 
     private void updateUser(){
+        String regex = "^(.+)@(.+)$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher= pattern.matcher(txtUsername.getText());
+
+        String numberRegex =  "^(\\+\\d{1,3}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$"
+                + "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{3}$"
+                + "|^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?)(\\d{2}[ ]?){2}\\d{2}$";
+        Pattern patterNumber = Pattern.compile(numberRegex);
+        Matcher matcherNumber = patterNumber.matcher(txtPhoneNumber.getText());
+
         if (txtUsername.getText().isEmpty()) {
+            lblErrors.setVisible(true);
             lblErrors.setTextFill(Color.TOMATO);
-            lblErrors.setText("Enter all details");
+            lblErrors.setText("Введите все данные");
         }
         else if (txtUsername.getText().equals(login) && txtPhoneNumber.getText().equals(phone)) {
+            lblErrors.setVisible(true);
             lblErrors.setTextFill(Color.TOMATO);
             lblErrors.setText("Данные не были изменены");
+        }else if(!matcher.matches())
+        {
+            lblErrors.setVisible(true);
+            lblErrors.setTextFill(Color.TOMATO);
+            lblErrors.setText("Заполните поле почты в соответсвующем формате");
+        }else if(!matcherNumber.matches())
+        {
+            lblErrors.setVisible(true);
+            lblErrors.setTextFill(Color.TOMATO);
+            lblErrors.setText("Заполните поле номера телефона в соответсвующем формате");
         }
         else {
             UpdateUserByPatientDto updateUserDto = new UpdateUserByPatientDto();

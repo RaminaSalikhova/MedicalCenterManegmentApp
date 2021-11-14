@@ -94,7 +94,7 @@ public class ComplaintController {
     private void sendComment(){
         if (textarea.getText().isEmpty()) {
             lblErrors.setTextFill(Color.TOMATO);
-            lblErrors.setText("Enter details");
+            lblErrors.setText("Напишите что-нибудь");
         }
         else {
             SendComplaintDto sendComplaintDto = new SendComplaintDto();

@@ -9,12 +9,12 @@
 
 <AnchorPane prefHeight="686.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.LoginController">
     <children>
-        <ImageView fitHeight="702.0" fitWidth="1124.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="-1.0" AnchorPane.topAnchor="0.0">
+        <ImageView fitHeight="869.0" fitWidth="1279.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="-1.0" AnchorPane.topAnchor="0.0">
             <image>
-                <Image url="@../resources/images/abstract-back.jpg" />
+                <Image url="@../resources/images/3568984.jpg" />
             </image>
         </ImageView>
-        <Pane layoutX="-14.0" opacity="0.78" prefHeight="702.0" prefWidth="1138.0" style="-fx-background-color: #000000;">
+        <Pane layoutX="-14.0" opacity="0.78" prefHeight="853.0" prefWidth="1292.0" style="-fx-background-color: #000000;">
             <children>
                 <Label alignment="CENTER" layoutX="210.0" layoutY="17.0" prefHeight="105.0" prefWidth="769.0" style="-fx-border-color: #ffffff;" text="Добро пожаловать!" textAlignment="CENTER" textFill="WHITE">
                     <font>

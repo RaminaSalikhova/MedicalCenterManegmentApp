@@ -19,4 +19,5 @@ public class UpdateAppointmentDto implements Serializable {
     private String recommendation;
     private String diagnosis;
     private boolean visited;
+    private String sex;
 }

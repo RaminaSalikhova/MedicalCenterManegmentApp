@@ -94,6 +94,8 @@ public class RegistrationController {
         Pattern patterNumber = Pattern.compile(numberRegex);
         Matcher matcherNumber = patterNumber.matcher(txtPhoneNumber.getText());
 
+        LocalDate value=txtDob.getValue();
+
         if (txtFirstName.getText().isEmpty()
                 && txtLastName.getText().isEmpty()
                 && txtPhoneNumber.getText().isEmpty()
@@ -115,8 +117,7 @@ public class RegistrationController {
             lblErrors.setTextFill(Color.TOMATO);
             lblErrors.setText("Заполните поле номера телефона в соответсвующем формате");
         }
-        LocalDate value=txtDob.getValue();
-        if(value==null){
+        else if(value==null){
             lblErrors.setVisible(true);
             lblErrors.setTextFill(Color.TOMATO);
             lblErrors.setText("Заполните все поля");

@@ -36,16 +36,17 @@ public class PatientDaoImpl implements PatientDao{
     }
 
     @Override
-    public void updateWeightAndHeight(double weight, double height, long id) {
+    public void updateWeightAndHeightAndSex(double weight, double height, long id, String sex) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
 
         Query query = session.createNativeQuery(
-                "update hospital_db.Patient set weight = :paramWeight,  height = :paramHeight \n" +
+                "update hospital_db.Patient set weight = :paramWeight,  height = :paramHeight, sex = :paramSex \n" +
                         "where id = :id"
         )
                 .setParameter("paramWeight", weight)
                 .setParameter("paramHeight",height)
+                .setParameter("paramSex", sex)
                 .setParameter("id", id);
 
 

@@ -18,4 +18,5 @@ public class DoctorAppointmentPatientAtm implements Serializable {
     private boolean visited;
     private double weight;
     private double height;
+    private String sex;
 }

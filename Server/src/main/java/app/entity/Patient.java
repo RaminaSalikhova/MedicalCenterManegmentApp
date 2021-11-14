@@ -7,8 +7,8 @@ import java.util.Objects;
 @Entity
 public class Patient {
     private long id;
-    private long userId;
-    private long addressId;
+    private Long userId;
+    private Long addressId;
     private String sex;
     private Double weight;
     private Double height;
@@ -28,21 +28,21 @@ public class Patient {
 
     @Basic
     @Column(name = "userID", nullable = false, insertable = false, updatable = false)
-    public long getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
     @Basic
-    @Column(name = "addressID", nullable = false, insertable = false, updatable = false)
-    public long getAddressId() {
+    @Column(name = "addressID", nullable = true, insertable = false, updatable = false)
+    public Long getAddressId() {
         return addressId;
     }
 
-    public void setAddressId(long addressId) {
+    public void setAddressId(Long addressId) {
         this.addressId = addressId;
     }
 
@@ -109,7 +109,7 @@ public class Patient {
     }
 
     @ManyToOne
-    @JoinColumn(name = "addressID", referencedColumnName = "ID", nullable = false)
+    @JoinColumn(name = "addressID", referencedColumnName = "ID", nullable = true)
     public Address getAddressByAddressId() {
         return addressByAddressId;
     }

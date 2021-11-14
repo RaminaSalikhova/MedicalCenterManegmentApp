@@ -19,5 +19,7 @@ public enum HANDLER_TYPE {
     getDoctorsAndAppointmentCountDto,
     sendMail,
     deleteUser,
-    deleteComment
+    deleteComment,
+    getDistrictsForAdmin,
+    getDoctorsForAdmin
 }

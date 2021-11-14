@@ -9,9 +9,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.AvailableTimeController">
     <children>
-        <ImageView fitHeight="711.0" fitWidth="1133.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-64.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <ImageView fitHeight="979.0" fitWidth="936.0" layoutX="222.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-329.0" AnchorPane.leftAnchor="222.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="0.0">
             <image>
-                <Image url="@../resources/images/dashboard.jpg" />
+                <Image url="@../resources/images/gummy-experiment-lab.png" />
             </image>
         </ImageView>
         <Pane opacity="0.78" prefHeight="650.0" prefWidth="1153.0" style="-fx-background-color: #000000;">

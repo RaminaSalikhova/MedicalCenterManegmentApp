@@ -49,7 +49,7 @@ public class AdminHomeController implements Initializable {
     private TableColumn<GetCommentListAtm, String> idColumnIDComment, idColumnMessage;
 
     @FXML
-    private JFXButton backBtn, sendBtn;
+    private JFXButton backBtn, sendBtn, doctorBtn;
 
     @FXML
     private BarChart<String, Number> chart;
@@ -319,6 +319,20 @@ public class AdminHomeController implements Initializable {
             try {
                 Stage stage = new Stage();
                 Pane root = FXMLLoader.load(getClass().getResource("/adminHome.fxml"));
+                stage.setScene(new Scene(root, 1024, 640));
+                stage.show();
+                stage.setResizable(false);
+
+
+                ((Node) (ae.getSource())).getScene().getWindow().hide();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }else if(ae.getSource() == doctorBtn){
+            sendMail();
+            try {
+                Stage stage = new Stage();
+                Pane root = FXMLLoader.load(getClass().getResource("/doctorEdit.fxml"));
                 stage.setScene(new Scene(root, 1024, 640));
                 stage.show();
                 stage.setResizable(false);

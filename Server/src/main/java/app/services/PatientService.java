@@ -34,5 +34,5 @@ public class PatientService {
 
     public Patient findPatientByUserID(long userID){return  patientDao.findPatientByUserID(userID);};
 
-    public void updateWeightAndHeight(double weight, double height, long id){patientDao.updateWeightAndHeight(weight, height, id);}
+    public void updateWeightAndHeightAndSex(double weight, double height, long id, String sex){patientDao.updateWeightAndHeightAndSex(weight, height, id, sex);}
 }

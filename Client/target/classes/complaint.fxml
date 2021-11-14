@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.ComplaintController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="641.0" prefWidth="1135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.ComplaintController">
     <children>
-        <ImageView fitHeight="710.0" fitWidth="1274.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-138.0" AnchorPane.topAnchor="0.0">
+        <ImageView fitHeight="936.0" fitWidth="912.0" layoutX="225.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-295.0" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
             <image>
-                <Image url="@../resources/images/dashboard.jpg" />
+                <Image url="@../resources/images/clip-lung-x-ray.png" />
             </image>
         </ImageView>
         <Pane layoutX="-20.0" layoutY="-3.0" opacity="0.78" prefHeight="643.0" prefWidth="1156.0" style="-fx-background-color: #000000;">
