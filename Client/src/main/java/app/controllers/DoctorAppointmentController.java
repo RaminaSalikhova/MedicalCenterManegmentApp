@@ -60,12 +60,12 @@ public class DoctorAppointmentController implements Initializable {
 
     long appointmentID;
 
-    private static int doneCounter;
+//    private static int DoctorHomeController.doneCounter;
 
     @FXML
     private void onCheckBoxAction() {
         if (checkBox.isSelected()) {
-            doneCounter++;
+            DoctorHomeController.incrementDoneCount();
         }
     }
 
@@ -144,6 +144,7 @@ public class DoctorAppointmentController implements Initializable {
             updateAppointmentDto.setHeight(Double.parseDouble(txtHeight.getText()));
             updateAppointmentDto.setWeight(Double.parseDouble(txtWeight.getText()));
             updateAppointmentDto.setRecommendation(txtRecommendation.getText());
+            updateAppointmentDto.setReport(txtReport.getText());
             if (checkBox.isSelected()) {
                 updateAppointmentDto.setVisited(true);
             }

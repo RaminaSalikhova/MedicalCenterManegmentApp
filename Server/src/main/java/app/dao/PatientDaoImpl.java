@@ -96,7 +96,7 @@ public class PatientDaoImpl implements PatientDao{
         Transaction tx1 = session.beginTransaction();
 
         Query query = session.createNativeQuery(
-                "update hospital_db.patient set addressID = :paramAddress where ID = :id"
+                "update hospital_db.patient set addressID = :paramAddress where userID = :id"
         )
                 .setParameter("paramAddress", addressID)
                 .setParameter("id", userID);

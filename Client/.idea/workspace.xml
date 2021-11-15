@@ -7,37 +7,13 @@
     <list default="true" id="1cb8cb91-58a2-43ad-8f24-4c34e207b619" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/AdminHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/AdminHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/DoctorEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/DoctorEditController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/PatientHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/PatientHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/enums/HANDLER_TYPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/enums/HANDLER_TYPE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/models/AnswerTransferModels/GetDistrictsAndAddressesForAdminAtm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/models/AnswerTransferModels/GetDistrictsAndAddressesForAdminAtm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/models/AnswerTransferModels/GetDoctorListForAdminAtm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/models/AnswerTransferModels/GetDoctorListForAdminAtm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/doctorEdit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/doctorEdit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/patientHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/patientHome.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/doctorEdit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/doctorEdit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/patientHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/patientHome.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/AddressDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/AddressDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/AddressDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/AddressDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/DistrictDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/DistrictDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/DistrictDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/DistrictDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/DoctorDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/DoctorDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/PatientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/PatientDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/DoctorAppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/DoctorAppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/DoctorHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/DoctorHomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/PatientAppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/PatientAppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/patientAppointment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/patientAppointment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/patientAppointment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/patientAppointment.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/PatientDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/PatientDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/SpecializationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/SpecializationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/SpecializationDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/SpecializationDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/dao/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/entity/Schedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/enums/HANDLER_TYPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/enums/HANDLER_TYPE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/handlers/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/handlers/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/handlers/implementations/RegistrationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/handlers/implementations/RegistrationHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/handlers/implementations/UpdateUserByPatientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/handlers/implementations/UpdateUserByPatientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/models/AnswerTransferModels/GetDistrictsAndAddressesForAdminAtm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/models/AnswerTransferModels/GetDistrictsAndAddressesForAdminAtm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/models/AnswerTransferModels/GetDoctorListForAdminAtm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/models/AnswerTransferModels/GetDoctorListForAdminAtm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/services/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/services/AddressService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/services/DistrictService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/services/DistrictService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/services/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/services/PatientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/services/SpecializationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/services/SpecializationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/app/handlers/implementations/GetDoctorsAndAppointmentCountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/app/handlers/implementations/GetDoctorsAndAppointmentCountHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +110,7 @@
       <workItem from="1635884057925" duration="6081000" />
       <workItem from="1636039178253" duration="111759000" />
       <workItem from="1636701600690" duration="7011000" />
-      <workItem from="1636878815897" duration="45658000" />
+      <workItem from="1636878815897" duration="50613000" />
     </task>
     <servers />
   </component>
@@ -157,11 +133,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/app/controllers/DoctorAppointmentController.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/app/controllers/AvailableTimeController.java</url>
           <line>97</line>
           <option name="timeStamp" value="3" />
@@ -175,6 +146,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/app/controllers/DoctorEditController.java</url>
           <line>423</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/app/controllers/DoctorHomeController.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/app/controllers/AdminHomeController.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

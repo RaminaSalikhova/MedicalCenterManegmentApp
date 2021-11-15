@@ -26,8 +26,8 @@ public class GetDoctorsAndAppointmentCountHandler extends RequestHandler<GetDoct
         List<Doctor> doctorList = doctorService.findAll();
 
         List<GetDoctorsAndAppointmentCountAtm> getDoctorsAndAppointmentCountAtmList = new ArrayList<>();
-        GetDoctorsAndAppointmentCountAtm getDoctorsAndAppointmentCountAtm = new GetDoctorsAndAppointmentCountAtm();
         for (Doctor doctor : doctorList) {
+            GetDoctorsAndAppointmentCountAtm getDoctorsAndAppointmentCountAtm = new GetDoctorsAndAppointmentCountAtm();
 
             UserService userService = new UserService();
             User user = userService.findById(doctor.getUserId());
@@ -42,8 +42,10 @@ public class GetDoctorsAndAppointmentCountHandler extends RequestHandler<GetDoct
             name.concat(user.getPatronymic());
             getDoctorsAndAppointmentCountAtm.setDoctorName(name);
             getDoctorsAndAppointmentCountAtm.setAppointmentsCount(appointmentList.size());
+
+            getDoctorsAndAppointmentCountAtmList.add(getDoctorsAndAppointmentCountAtm);
+
         }
-        getDoctorsAndAppointmentCountAtmList.add(getDoctorsAndAppointmentCountAtm);
         return getDoctorsAndAppointmentCountAtmList;
     }
 }

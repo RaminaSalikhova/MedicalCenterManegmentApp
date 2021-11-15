@@ -52,22 +52,16 @@ public class DoctorHomeController implements Initializable {
     @FXML
     PieChart chart;
 
-    private int initialCount;
+    private final static int initialCount = getItemsToAddSize();
+
     private static int doneCounter;
+
+    public static void incrementDoneCount() {
+        doneCounter++;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        int percent;
-        if(doneCounter==0) {
-             percent = 100;
-        }else {
-            percent=doneCounter*100/initialCount;
-        }
-        ObservableList<PieChart.Data> pieChartData =
-                FXCollections.observableArrayList(
-                        new PieChart.Data("Осталось", percent));
-
-        chart.setData(pieChartData);
 
         idColumnID.setCellValueFactory(new PropertyValueFactory<GetPatientListAtm, String>("appointmentID"));
         idColumnIDpatient.setCellValueFactory(new PropertyValueFactory<GetPatientListAtm, String>("patientID"));
@@ -114,6 +108,25 @@ public class DoctorHomeController implements Initializable {
             }
         });
         tableView.getItems().setAll(getItemsToAdd());
+
+
+        int percent;
+        if (doneCounter == 0) {
+            percent = 100;
+        } else {
+            if (initialCount != 0) {
+                percent = doneCounter * 100 / initialCount;
+            } else {
+                percent = 100;
+            }
+        }
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("Осталось", 100-percent),
+                        new PieChart.Data("Выполнено", percent));
+
+        chart.setData(pieChartData);
+
     }
 
     private List<GetPatientListAtm> getItemsToAdd() {
@@ -142,8 +155,36 @@ public class DoctorHomeController implements Initializable {
             System.out.println(response.getMessage());
         }
         List<GetPatientListAtm> listAtms = (List<GetPatientListAtm>) response.getData();
-        initialCount = listAtms.size();
         return (List<GetPatientListAtm>) response.getData();
+    }
+
+    private static int getItemsToAddSize() {
+        GetPatientListDto getPatientListDto = new GetPatientListDto();
+
+        ClientRequest<GetPatientListDto> request = new ClientRequest<>();
+        request.setType(HANDLER_TYPE.getPatientList);
+        UserAtm userAtm = UserHolder.getInstance().getUser();
+        getPatientListDto.setUserID(userAtm.getId());
+        request.setData(getPatientListDto);
+
+        try {
+            ClientConnection.getInstance().sendObject(request);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ServerResponse response = null;
+        try {
+            response = (ServerResponse) ClientConnection.getInstance().receiveObject();
+        } catch (ClassNotFoundException | IOException e) {
+            e.printStackTrace();
+        }
+        if (response.getStatus() == true) {
+            System.out.println(response.getData());
+        } else {
+            System.out.println(response.getMessage());
+        }
+        List<GetPatientListAtm> listAtms = (List<GetPatientListAtm>) response.getData();
+        return listAtms.size();
     }
 
     @FXML

@@ -14,7 +14,17 @@
                 <Image url="@../resources/images/clip-new-samples-for-research.png" />
             </image>
         </ImageView>
-        <Pane layoutX="-10.0" layoutY="-1.0" opacity="0.78" prefHeight="650.0" prefWidth="1153.0" style="-fx-background-color: #000000;">
+        <HBox id="HBox" alignment="CENTER" layoutX="241.0" layoutY="77.0" prefHeight="25.0" prefWidth="343.0" spacing="5.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="241.0" AnchorPane.rightAnchor="564.0" AnchorPane.topAnchor="77.0">
+            <children>
+                <Label text="Поиск по имени и фамилии:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+                <TextField fx:id="filterField" layoutX="393.0" layoutY="85.0" prefHeight="18.0" prefWidth="149.0" />
+            </children>
+        </HBox>
+
+        <Pane layoutX="-5.0" layoutY="-15.0" opacity="0.78" prefHeight="650.0" prefWidth="1153.0" style="-fx-background-color: #000000;">
             <children>
                 <Label alignment="CENTER" contentDisplay="CENTER" layoutX="544.0" layoutY="14.0" prefHeight="54.0" prefWidth="190.0" text="Заказ талона" textAlignment="CENTER" textFill="WHITE">
                     <font>
@@ -22,20 +32,26 @@
                     </font>
                 </Label>
                 <Label alignment="CENTER" layoutX="535.0" layoutY="68.0" prefHeight="39.0" prefWidth="209.0" text="Выберите врача" textFill="WHITE" />
+
                 <BorderPane layoutX="275.0" layoutY="129.0" prefHeight="444.0" prefWidth="746.0">
                     <center>
                         <ScrollPane disable="false" prefHeight="7861.0" prefWidth="1143.0" visible="true" />
                         <TableView fx:id="myTableView" layoutX="304.0" layoutY="129.0" prefHeight="450.0" prefWidth="825.0">
-                        <columns>
-                            <TableColumn fx:id="idColumnID" prefWidth="119.33334350585938" text="ID" visible="false" />
-                            <TableColumn fx:id="idColumnFirstName" prefWidth="119.33334350585938" text="Имя" />
-                            <TableColumn fx:id="idColumnLastName" prefWidth="136.0" text="Фамилия" />
-                            <TableColumn fx:id="idColumnPatronymic" prefWidth="123.6666259765625" text="Отчество" />
-                            <TableColumn fx:id="idColumnSpecialization" prefWidth="193.0" text="Специальность" />
-                            <TableColumn fx:id="idColumnExperience" minWidth="0.0" prefWidth="74.33331298828125" text="Стаж" />
-                            <TableColumn fx:id="idColumnRoomNumber" prefWidth="94.3333740234375" text="Кабинет" />
-                        </columns>
-                    </TableView>
+                            <columns>
+                                <TableColumn fx:id="idColumnID" prefWidth="119.33334350585938" text="ID" visible="false" />
+                                <TableColumn fx:id="idColumnFirstName" prefWidth="119.33334350585938" text="Имя" />
+                                <TableColumn fx:id="idColumnLastName" prefWidth="136.0" text="Фамилия" />
+                                <TableColumn fx:id="idColumnPatronymic" prefWidth="123.6666259765625" text="Отчество" />
+                                <TableColumn fx:id="idColumnSpecialization" prefWidth="193.0" text="Специальность" />
+                                <TableColumn fx:id="idColumnExperience" minWidth="0.0" prefWidth="74.33331298828125" text="Стаж" />
+                                <TableColumn fx:id="idColumnRoomNumber" prefWidth="94.3333740234375" text="Кабинет" />
+                            </columns>
+                            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                <children>
+                                    <Pagination fx:id="pagination" />
+                                </children>
+                            </HBox>
+                        </TableView>
                     </center>
                 </BorderPane>
 

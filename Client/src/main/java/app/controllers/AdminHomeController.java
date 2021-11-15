@@ -59,7 +59,7 @@ public class AdminHomeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        chart.setTitle("КОличество записей к каждому врачу");
+        chart.setTitle("Количество записей к каждому врачу");
         var data = new XYChart.Series<String, Number>();
 
         GetDoctorsAndAppointmentCountDto getAppointmentCountDto=new GetDoctorsAndAppointmentCountDto();

@@ -13,6 +13,8 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -51,9 +53,18 @@ public class PatientAppointmentController implements Initializable {
 
     private List<GetDoctorListAtm> doctorsList = new ArrayList<>();
 
+    private FilteredList<GetDoctorListAtm> filteredData;
+
+    private ObservableList<GetDoctorListAtm> masterData = FXCollections.observableArrayList();
+
+    @FXML
+    private TextField filterField;
+    @FXML
+    private Pagination pagination;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         idColumnID.setCellValueFactory(new PropertyValueFactory<GetDoctorListAtm, String>("id"));
         idColumnFirstName.setCellValueFactory(new PropertyValueFactory<GetDoctorListAtm, String>("first_name"));
         idColumnLastName.setCellValueFactory(new PropertyValueFactory<GetDoctorListAtm, String>("last_name"));
@@ -61,6 +72,28 @@ public class PatientAppointmentController implements Initializable {
         idColumnSpecialization.setCellValueFactory(new PropertyValueFactory<GetDoctorListAtm, String>("roomNumber"));
         idColumnExperience.setCellValueFactory(new PropertyValueFactory<GetDoctorListAtm, String>("experience"));
         idColumnRoomNumber.setCellValueFactory(new PropertyValueFactory<GetDoctorListAtm, String>("specialization"));
+
+        for (GetDoctorListAtm el:
+                getItemsToAdd()) {
+            masterData.add(el);
+
+        }
+        filteredData = new FilteredList<>(masterData, p -> true);
+        filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(
+                    getDoctorListAtm -> newValue == null || newValue.isEmpty() || getDoctorListAtm.getFirst_name().toLowerCase()
+                            .contains(newValue.toLowerCase()) || getDoctorListAtm.getLast_name().toLowerCase()
+                            .contains(newValue.toLowerCase()));
+            changeTableView(pagination.getCurrentPageIndex(), filteredData.size());
+        });
+
+//        idColumnID.setCellValueFactory(new PropertyValueFactory<GetDoctorListAtm, String>("id"));
+//        idColumnFirstName.setCellValueFactory(new PropertyValueFactory<GetDoctorListAtm, String>("first_name"));
+//        idColumnLastName.setCellValueFactory(new PropertyValueFactory<GetDoctorListAtm, String>("last_name"));
+//        idColumnPatronymic.setCellValueFactory(new PropertyValueFactory<GetDoctorListAtm, String>("patronymic"));
+//        idColumnSpecialization.setCellValueFactory(new PropertyValueFactory<GetDoctorListAtm, String>("roomNumber"));
+//        idColumnExperience.setCellValueFactory(new PropertyValueFactory<GetDoctorListAtm, String>("experience"));
+//        idColumnRoomNumber.setCellValueFactory(new PropertyValueFactory<GetDoctorListAtm, String>("specialization"));
 
         myTableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
             @Override
@@ -100,6 +133,20 @@ public class PatientAppointmentController implements Initializable {
 
     }
 
+
+    private void changeTableView(int index, int limit) {
+
+        int fromIndex = index * limit;
+        int toIndex = Math.min(fromIndex + limit, masterData.size());
+
+        int minIndex = Math.min(toIndex, filteredData.size());
+        SortedList<GetDoctorListAtm> sortedData = new SortedList<>(
+                FXCollections.observableArrayList(filteredData.subList(Math.min(fromIndex, minIndex), minIndex)));
+        sortedData.comparatorProperty().bind(myTableView.comparatorProperty());
+
+        myTableView.setItems(sortedData);
+
+    }
 
     private List<GetDoctorListAtm> getItemsToAdd() {
         GetDoctorListDto getDoctorListDto = new GetDoctorListDto();
