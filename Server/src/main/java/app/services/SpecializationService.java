@@ -32,4 +32,6 @@ public class SpecializationService {
     public List<Specialization> findAll() {
         return specializationDao.findAll();
     }
-}
+
+    public Specialization findByName(String name) {return specializationDao.findByName(name);}
+    }

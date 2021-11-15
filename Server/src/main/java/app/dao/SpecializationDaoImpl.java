@@ -2,6 +2,7 @@ package app.dao;
 
 import app.entity.Doctor;
 import app.entity.Specialization;
+import app.entity.User;
 import app.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -41,5 +42,23 @@ public class SpecializationDaoImpl implements SpecializationDao{
         String sql = "From " + Specialization.class.getSimpleName();
         List<Specialization> specializations = (List<Specialization>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(sql).list();
         return specializations;
+    }
+
+    public Specialization findByName(String name) {
+        List<Specialization> specializations = HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(
+                "select * from hospital_db.specialization where name = :param",
+                Specialization.class
+        )
+                .setParameter("param", name)
+                .getResultList();
+
+        Specialization specialization;
+        if (specializations.size()!=0){
+            specialization=specializations.get(0);
+        }else {
+            specialization=null;
+        }
+
+        return specialization;
     }
 }

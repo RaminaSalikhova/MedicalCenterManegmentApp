@@ -32,4 +32,6 @@ public class DistrictService {
     public List<District> findAll() {
         return districtDao.findAll();
     }
+
+    public District findByName(String name) {return districtDao.findByName(name);}
 }

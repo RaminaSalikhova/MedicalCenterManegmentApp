@@ -19,4 +19,6 @@ public interface PatientDao {
     public Patient findPatientByUserID(long userID);
 
     public void updateWeightAndHeightAndSex(double weight, double height, long id, String sex);
+
+    public void updateAddress(Long userID, Long addressID);
 }

@@ -47,4 +47,22 @@ public class DistrictDaoImpl implements DistrictDao{
         List<District> districts = (List<District>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(sql).list();
         return districts;
     }
+
+    public District findByName(String name) {
+        List<District> districts = HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(
+                "select * from hospital_db.district where name = :param",
+                District.class
+        )
+                .setParameter("param", name)
+                .getResultList();
+
+        District district;
+        if (districts.size()!=0){
+            district=districts.get(0);
+        }else {
+            district=null;
+        }
+
+        return district;
+    }
 }

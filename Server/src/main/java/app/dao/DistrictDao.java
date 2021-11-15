@@ -15,4 +15,6 @@ public interface DistrictDao {
     public void delete(District district);
 
     public List<District> findAll();
+
+    public District findByName(String name);
 }

@@ -6,11 +6,11 @@ import java.util.Objects;
 
 @Entity
 public class Doctor {
-    private long id;
-    private long userId;
-    private long scheduleId;
-    private long specializationId;
-    private long districtId;
+    private Long id;
+    private Long userId;
+    private Long scheduleId;
+    private Long specializationId;
+    private Long districtId;
     private Double salary;
     private Double experience;
     private Collection<Appointment> appointmentsById;
@@ -21,51 +21,51 @@ public class Doctor {
 
     @Id
     @Column(name = "ID", nullable = false)
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
     @Basic
     @Column(name = "userID", nullable = false, insertable = false, updatable = false)
-    public long getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
     @Basic
     @Column(name = "scheduleID", nullable = true, insertable = false, updatable = false)
-    public long getScheduleId() {
+    public Long getScheduleId() {
         return scheduleId;
     }
 
-    public void setScheduleId(long scheduleId) {
+    public void setScheduleId(Long scheduleId) {
         this.scheduleId = scheduleId;
     }
 
     @Basic
     @Column(name = "specializationID", nullable = true, insertable = false, updatable = false)
-    public long getSpecializationId() {
+    public Long getSpecializationId() {
         return specializationId;
     }
 
-    public void setSpecializationId(long specializationId) {
+    public void setSpecializationId(Long specializationId) {
         this.specializationId = specializationId;
     }
 
     @Basic
     @Column(name = "districtID", nullable = true, insertable = false, updatable = false)
-    public long getDistrictId() {
+    public Long getDistrictId() {
         return districtId;
     }
 
-    public void setDistrictId(long districtId) {
+    public void setDistrictId(Long districtId) {
         this.districtId = districtId;
     }
 

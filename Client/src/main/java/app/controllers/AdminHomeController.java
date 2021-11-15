@@ -329,7 +329,6 @@ public class AdminHomeController implements Initializable {
                 System.out.println(e.getMessage());
             }
         }else if(ae.getSource() == doctorBtn){
-            sendMail();
             try {
                 Stage stage = new Stage();
                 Pane root = FXMLLoader.load(getClass().getResource("/doctorEdit.fxml"));

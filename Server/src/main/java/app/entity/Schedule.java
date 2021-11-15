@@ -8,7 +8,7 @@ import java.util.Objects;
 
 @Entity
 public class Schedule {
-    private long id;
+    private Long id;
     private Date date;
     private Time startTime;
     private Time endTime;
@@ -18,11 +18,11 @@ public class Schedule {
 
     @Id
     @Column(name = "ID", nullable = false)
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

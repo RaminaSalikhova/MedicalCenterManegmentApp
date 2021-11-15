@@ -13,8 +13,8 @@ import java.io.Serializable;
 public class GetDistrictsAndAddressesForAdminAtm implements Serializable {
     private Long districtID, addressID;
     private String districtName,
-            addressName;
-    private int addressHouse,
+            addressName,
+            addressHouse,
             addressFlat;
 
 }

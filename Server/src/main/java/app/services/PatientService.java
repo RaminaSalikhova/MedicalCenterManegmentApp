@@ -35,4 +35,6 @@ public class PatientService {
     public Patient findPatientByUserID(long userID){return  patientDao.findPatientByUserID(userID);};
 
     public void updateWeightAndHeightAndSex(double weight, double height, long id, String sex){patientDao.updateWeightAndHeightAndSex(weight, height, id, sex);}
+
+    public void updateAddress(Long userID, Long addressID) { patientDao.updateAddress(userID,addressID);}
 }

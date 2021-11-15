@@ -90,4 +90,20 @@ public class PatientDaoImpl implements PatientDao{
         }
         return patient;
     }
+
+    public void updateAddress(Long userID, Long addressID) {
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction tx1 = session.beginTransaction();
+
+        Query query = session.createNativeQuery(
+                "update hospital_db.patient set addressID = :paramAddress where ID = :id"
+        )
+                .setParameter("paramAddress", addressID)
+                .setParameter("id", userID);
+
+
+        int result = query.executeUpdate();
+        tx1.commit();
+        session.close();
+    }
 }

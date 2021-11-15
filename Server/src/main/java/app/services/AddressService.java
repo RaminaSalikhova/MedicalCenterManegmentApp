@@ -6,6 +6,7 @@ import app.dao.ScheduleDao;
 import app.dao.ScheduleDaoImpl;
 import app.entity.Address;
 import app.entity.Schedule;
+import app.models.DataTransferModels.UpdateUserAddressDto;
 
 import java.util.List;
 
@@ -31,5 +32,6 @@ public class AddressService {
     public List<Address> findAll() {
         return addressDao.findAll();
     }
+    public Address findAddress(UpdateUserAddressDto address) {return addressDao.findAddress(address);}
 
 }

@@ -2,6 +2,9 @@ package app.dao;
 
 import app.entity.Address;
 import app.entity.Appointment;
+import app.entity.User;
+import app.models.DataTransferModels.UpdateUserAddressDto;
+import app.models.DataTransferModels.UpdateUserByPatientDto;
 import app.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -46,5 +49,25 @@ public class AddressDaoImpl implements AddressDao{
         String sql = "From " + Address.class.getSimpleName();
         List<Address> addresses = (List<Address>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(sql).list();
         return addresses;
+    }
+
+    public Address findAddress(UpdateUserAddressDto address) {
+        List<Address> addresses = HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(
+                "select * from address where name = :param AND houseNumber =:paramHouseNumber AND flatNumber =:paramFlatNumber",
+                Address.class
+        )
+                .setParameter("param", address.getAddressName())
+                .setParameter("paramHouseNumber", address.getHouse())
+                .setParameter("paramFlatNumber", address.getFlat())
+                .getResultList();
+
+        Address address1;
+        if (addresses.size()!=0){
+            address1=addresses.get(0);
+        }else {
+            address1=null;
+        }
+
+        return address1;
     }
 }

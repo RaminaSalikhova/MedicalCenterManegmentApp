@@ -6,15 +6,17 @@ import app.entity.User;
 import app.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
+import java.util.Map;
 
-public class DoctorDaoImpl implements DoctorDao{
-    public Doctor findById(long id){
+public class DoctorDaoImpl implements DoctorDao {
+    public Doctor findById(long id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Doctor.class, id);
     }
 
-    public void save(Doctor doctor){
+    public void save(Doctor doctor) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.save(doctor);
@@ -22,7 +24,7 @@ public class DoctorDaoImpl implements DoctorDao{
         session.close();
     }
 
-    public void update(Doctor doctor){
+    public void update(Doctor doctor) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.update(doctor);
@@ -30,7 +32,7 @@ public class DoctorDaoImpl implements DoctorDao{
         session.close();
     }
 
-    public void delete(Doctor doctor){
+    public void delete(Doctor doctor) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.delete(doctor);
@@ -38,14 +40,14 @@ public class DoctorDaoImpl implements DoctorDao{
         session.close();
     }
 
-    public List<Doctor> findAll(){
+    public List<Doctor> findAll() {
         String sql = "From " + Doctor.class.getSimpleName();
         List<Doctor> doctors = (List<Doctor>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(sql).list();
         return doctors;
 
     }
 
-    public List<Doctor> findAllNotNull(){
+    public List<Doctor> findAllNotNull() {
         List<Doctor> doctors = HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(
                 "select * from doctor where specializationID AND scheduleID AND districtID is not NULL ",
                 Doctor.class
@@ -58,7 +60,7 @@ public class DoctorDaoImpl implements DoctorDao{
 
     }
 
-    public Doctor findAllByUserID(long userID){
+    public Doctor findAllByUserID(long userID) {
         List<Doctor> doctors = HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(
                 "select * from doctor where userID = :param ",
                 Doctor.class
@@ -67,12 +69,14 @@ public class DoctorDaoImpl implements DoctorDao{
                 .getResultList();
 
         Doctor doctor;
-        if (doctors.size()!=0){
-            doctor=doctors.get(0);
-        }else {
-            doctor=null;
+        if (doctors.size() != 0) {
+            doctor = doctors.get(0);
+        } else {
+            doctor = null;
         }
 
         return doctor;
     }
+
+
 }

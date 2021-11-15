@@ -14,39 +14,43 @@
                 <Image url="@../resources/images/dashboard.jpg" />
             </image>
         </ImageView>
-        <Pane layoutX="-18.0" layoutY="15.0" opacity="0.78" prefHeight="629.0" prefWidth="1141.0" style="-fx-background-color: #000000;">
+        <Pane layoutX="-20.0" layoutY="14.0" opacity="0.78" prefHeight="629.0" prefWidth="1141.0" style="-fx-background-color: #000000;">
             <children>
+                <Label fx:id="lblErrors" alignment="CENTER" layoutX="501.0" layoutY="7.0" prefHeight="25.0" prefWidth="424.0" text="Ошибка" textAlignment="CENTER" visible="false">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
                 <Label layoutX="383.0" layoutY="14.0" text="Доктора" />
-                <BorderPane layoutX="28.0" layoutY="41.0" prefHeight="154.0" prefWidth="1108.0">
+                <BorderPane layoutX="28.0" layoutY="41.0" prefHeight="154.0" prefWidth="955.0">
                     <center>
                         <ScrollPane disable="false" prefHeight="7861.0" prefWidth="1143.0" visible="true" />
                         <TableView fx:id="tableViewDoctors" layoutX="304.0" layoutY="129.0" prefHeight="154.0" prefWidth="789.0">
                             <columns>
                                 <TableColumn fx:id="idColumnIDUser" prefWidth="119.33334350585938" text="ID" visible="false" />
                                 <TableColumn fx:id="idColumnIDDoctor" prefWidth="119.33334350585938" text="ID" visible="false" />
-                                <TableColumn fx:id="idColumnFirstName" prefWidth="119.33334350585938" text="Имя" visible="false" />
-                                <TableColumn fx:id="idColumnLastName" prefWidth="119.33334350585938" text="Фамилия" />
-                                <TableColumn fx:id="idColumnPatronymic" prefWidth="136.0" text="Отчество" />
-                                <TableColumn fx:id="idColumnPhoneNum" minWidth="0.0" prefWidth="108.66668701171875" text="Номер телефона" />
-                                <TableColumn fx:id="idColumnFrom" prefWidth="120.66665649414062" text="Время приема: с" />
-                                <TableColumn fx:id="idColumnTill" prefWidth="137.3333740234375" text="Время приема: до" />
-                                <TableColumn fx:id="idColumnRoom" prefWidth="52.6666259765625" text="Кабинет" />
-                                <TableColumn fx:id="idColumnSpecialization" prefWidth="178.6666259765625" text="Специализация" />
-                                <TableColumn fx:id="idColumnDistrict" prefWidth="50.66668701171875" text="Участок" />
-                                <TableColumn fx:id="idColumnSalary" prefWidth="72.0" text="Оклад" />
+                                <TableColumn fx:id="idColumnFirstName" prefWidth="84.99999237060547" text="Имя" />
+                                <TableColumn fx:id="idColumnLastName" prefWidth="95.99998474121094" text="Фамилия" />
+                                <TableColumn fx:id="idColumnPatronymic" prefWidth="98.0" text="Отчество" />
+                                <TableColumn fx:id="idColumnPhoneNum" minWidth="0.0" prefWidth="106.66665649414062" text="Номер телефона" />
+                                <TableColumn fx:id="idColumnFrom" prefWidth="114.33334350585938" text="Время приема: с" />
+                                <TableColumn fx:id="idColumnTill" prefWidth="131.33331298828125" text="Время приема: до" />
+                                <TableColumn fx:id="idColumnRoom" prefWidth="63.33331298828125" text="Кабинет" />
+                                <TableColumn fx:id="idColumnSpecialization" prefWidth="154.00006103515625" text="Специализация" />
+                                <TableColumn fx:id="idColumnDistrict" prefWidth="103.33331298828125" text="Участок" />
+                                <TableColumn fx:id="idColumnSalary" prefWidth="152.33331298828125" text="Оклад" />
                                 <TableColumn fx:id="idColumnExperience" prefWidth="158.0" text="Опыт работы" />
                             </columns>
                         </TableView>
                     </center>
                 </BorderPane>
-                <Label layoutX="361.0" layoutY="306.0" text="Участки" />
-                <HBox id="HBox" alignment="CENTER" layoutX="56.0" layoutY="331.0" spacing="5.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="869.9999999999999" AnchorPane.topAnchor="331.0">
-                    <children>
-                        <Label text="Filter Table:" />
-                        <TextField fx:id="filterField" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
-                    </children>
-                </HBox>
-                <BorderPane layoutX="56.0" layoutY="357.0" prefHeight="144.0" prefWidth="724.0">
+                <Label layoutX="466.0" layoutY="265.0" prefHeight="17.0" prefWidth="46.0" text="Адреса" />
+<!--                <HBox id="HBox" alignment="CENTER" layoutX="321.0" layoutY="272.0" spacing="5.0" AnchorPane.leftAnchor="321.0" AnchorPane.rightAnchor="604.9999999999999" AnchorPane.topAnchor="272.0">-->
+<!--                    <children>-->
+<!--                        <Label text="Filter Table:" />-->
+<!--                    </children>-->
+<!--                </HBox>-->
+                <BorderPane layoutX="259.0" layoutY="311.0" prefHeight="154.0" prefWidth="484.0">
                     <center>
                         <ScrollPane disable="false" prefHeight="7861.0" prefWidth="1143.0" visible="true" />
                         <TableView fx:id="tableViewDistricts" layoutX="304.0" layoutY="129.0" prefHeight="147.0" prefWidth="748.0">
@@ -61,7 +65,7 @@
                         </TableView>
                     </center>
                 </BorderPane>
-                <JFXButton fx:id="saveReportBtn" alignment="CENTER" layoutX="810.0" layoutY="357.0" onAction="#handleButtonClicks" prefHeight="48.0" prefWidth="306.0" style="-fx-background-color: #05668D;" text="Сохранить отчет по участкам" textFill="WHITE">
+                <JFXButton fx:id="saveReportBtn" alignment="CENTER" layoutX="803.0" layoutY="287.0" onAction="#handleButtonClicks" prefHeight="48.0" prefWidth="178.0" style="-fx-background-color: #05668D;" text="Сохранить отчет" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
@@ -69,7 +73,7 @@
                         <Insets />
                     </opaqueInsets>
                 </JFXButton>
-                <JFXButton fx:id="backBtn" alignment="CENTER" layoutX="809.0" layoutY="275.0" onAction="#handleButtonClicks" prefHeight="48.0" prefWidth="155.0" style="-fx-background-color: #05668D;" text="Назад" textFill="WHITE">
+                <JFXButton fx:id="backBtn" alignment="CENTER" layoutX="814.0" layoutY="225.0" onAction="#handleButtonClicks" prefHeight="48.0" prefWidth="155.0" style="-fx-background-color: #05668D;" text="Назад" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
@@ -77,6 +81,32 @@
                         <Insets />
                     </opaqueInsets>
                 </JFXButton>
+
+                <JFXTextField fx:id="txtDistrict" focusColor="#a2d2ff" labelFloat="true" layoutX="28.0" layoutY="299.0" prefHeight="31.0" prefWidth="202.0" promptText="УЧАСТОК" unFocusColor="WHITE" />
+                <JFXTextField fx:id="txtName" focusColor="#a2d2ff" labelFloat="true" layoutX="28.0" layoutY="372.0" prefHeight="31.0" prefWidth="202.0" promptText="УЛИЦА" unFocusColor="WHITE" />
+                <JFXTextField fx:id="txtHouse" focusColor="#a2d2ff" labelFloat="true" layoutX="25.0" layoutY="528.0" prefHeight="31.0" prefWidth="202.0" promptText="ДОМ" unFocusColor="WHITE" />
+                <JFXTextField fx:id="txtFlat" focusColor="#a2d2ff" labelFloat="true" layoutX="28.0" layoutY="450.0" prefHeight="31.0" prefWidth="202.0" promptText="КВАРТИРА" unFocusColor="WHITE" />
+                <Label layoutX="54.0" layoutY="240.0" prefHeight="17.0" prefWidth="94.0" text="Добавить адрес" />
+                <JFXButton fx:id="addAddressBtn" alignment="CENTER" layoutX="25.0" layoutY="567.0" onAction="#handleButtonClicks" prefHeight="48.0" prefWidth="202.0" style="-fx-background-color: #05668D;" text="Добавить адрес" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </JFXButton>
+
+                <JFXTextField fx:id="txtDistrictName" focusColor="#a2d2ff" labelFloat="true" layoutX="768.0" layoutY="403.0" prefHeight="31.0" prefWidth="202.0" promptText="УЧАСТОК" unFocusColor="WHITE" />
+                <Label layoutX="768.0" layoutY="363.0" prefHeight="17.0" prefWidth="142.0" text="Добавить участок" />
+                <JFXButton fx:id="addDistrictBtn" alignment="CENTER" layoutX="768.0" layoutY="457.0" onAction="#handleButtonClicks" prefHeight="48.0" prefWidth="202.0" style="-fx-background-color: #05668D;" text="Добавить участок" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </JFXButton>
+<!--                  <TextField fx:id="filterField" layoutX="393.0" layoutY="268.0" prefWidth="-1.0" />-->
             </children>
         </Pane>
     </children>

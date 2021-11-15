@@ -3,6 +3,7 @@ package app.handlers.implementations;
 import app.connection.ServerResponse;
 import app.entity.Doctor;
 import app.entity.Patient;
+import app.entity.Schedule;
 import app.entity.User;
 import app.enums.HANDLER_TYPE;
 import app.enums.TYPE;
@@ -11,6 +12,7 @@ import app.helpers.PasswordUtils;
 import app.models.DataTransferModels.RegistrationDto;
 import app.services.DoctorService;
 import app.services.PatientService;
+import app.services.ScheduleService;
 import app.services.UserService;
 
 import java.util.regex.Matcher;

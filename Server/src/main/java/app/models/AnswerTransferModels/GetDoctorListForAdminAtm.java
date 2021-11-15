@@ -18,6 +18,5 @@ public class GetDoctorListForAdminAtm implements Serializable {
             tillWorkTime,
             roomNumber,
             specialization,
-            districtName;
-    private Double salary, experience;
+            districtName,salary, experience;
 }

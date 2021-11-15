@@ -5,6 +5,7 @@ import app.connection.ServerResponse;
 import app.enums.HANDLER_TYPE;
 import app.handlers.implementations.*;
 import app.helpers.ObjectMessenger;
+import app.models.DataTransferModels.UpdateDoctorDto;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -43,6 +44,16 @@ public class ClientHandler extends Thread {
         requestHandlers.add(new SendMailHandler());
         requestHandlers.add(new DeleteUserHandler());
         requestHandlers.add(new DeleteCommentHandler());
+        requestHandlers.add(new GetDoctorsForAdmin());
+        requestHandlers.add(new GetDistrictsForAdmin());
+        requestHandlers.add(new UpdateDistrictHandler());
+        requestHandlers.add(new UpdateDoctorHandler());
+        requestHandlers.add(new AddAddressHandler());
+        requestHandlers.add(new AddDistrictHandler());
+        requestHandlers.add(new GetReportHandler());
+        requestHandlers.add(new GetAddressListHandler());
+        requestHandlers.add(new GetUserAddressHandler());
+        requestHandlers.add(new UpdateUserAddressHandler());
     }
 
     public void run() {

@@ -21,5 +21,13 @@ public enum HANDLER_TYPE {
     deleteUser,
     deleteComment,
     getDistrictsForAdmin,
-    getDoctorsForAdmin
+    getDoctorsForAdmin,
+    updateDoctor,
+    updateDistrict,
+    addDistrict,
+    addAddress,
+    getReport,
+    getAddressList,
+    getUserAddress,
+    updateUserAddress
 }

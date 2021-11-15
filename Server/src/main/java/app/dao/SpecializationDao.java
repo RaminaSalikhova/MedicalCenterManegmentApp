@@ -15,4 +15,6 @@ public interface SpecializationDao {
     public void delete(Specialization specialization);
 
     public List<Specialization> findAll();
+
+    public Specialization findByName(String name);
 }
