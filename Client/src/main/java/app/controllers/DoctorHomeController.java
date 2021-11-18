@@ -129,6 +129,21 @@ public class DoctorHomeController implements Initializable {
 
     }
 
+    public float percentCount(int initialCount, int doneCounter){
+        float percent=0;
+
+        if (doneCounter == 0) {
+            percent = 100;
+        } else {
+            if (initialCount != 0) {
+                percent = doneCounter * 100 / initialCount;
+            } else {
+                percent = 100;
+            }
+        }
+        return  percent;
+    }
+
     private List<GetPatientListAtm> getItemsToAdd() {
         GetPatientListDto getPatientListDto = new GetPatientListDto();
 

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.ShowPatientDataController">
+    <children>
+        <ImageView fitHeight="640" fitWidth="1024" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="109.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@../resources/images/clip-doc-i-need-your-help.png" />
+            </image>
+        </ImageView>
+        <Pane layoutX="-20.0" layoutY="-3.0" opacity="0.78" prefHeight="646.0" prefWidth="1046.0" style="-fx-background-color: #000000;">
+            <children>
+                <BorderPane layoutX="253.0" layoutY="41.0" prefHeight="277.0" prefWidth="773.0">
+                    <center>
+
+                    </center>
+                    <left>
+                        <TableView fx:id="tableViewOfVisitedAppointments" prefHeight="275.0" prefWidth="775.0" BorderPane.alignment="CENTER">
+                            <ScrollPane disable="false" prefHeight="102.0" prefWidth="0.0" visible="true" />
+                            <columns>
+                                <TableColumn fx:id="idColumnIDOfVisitedAppointment" text="ID" visible="false" />
+                                <TableColumn fx:id="idColumnDoctorFirstNameOfVisitedAppointment" text="Имя врача" />
+                                <TableColumn fx:id="idColumnDoctorLastNameOfVisitedAppointment" text="Фамилия врача" />
+                                <TableColumn fx:id="idColumnDoctorPatronymicOfVisitedAppointment" text="Отчество врача" />
+                                <TableColumn fx:id="idColumnSpecializationOfVisitedAppointment" text="Специальность" />
+                                <TableColumn fx:id="idColumnDiagnosisOfVisitedAppointment" text="Диагноз" />
+                                <TableColumn fx:id="idColumnRecommendationOfVisitedAppointment" text="Рекомендации" />
+                                <TableColumn fx:id="idColumnReportOfVisitedAppointment" prefWidth="52.0" text="Заключение" />
+                                <TableColumn fx:id="idColumnDateTimeOfVisitedAppointment" prefWidth="158.0" text="Дата и время приема" />
+                            </columns>
+                        </TableView>
+                    </left>
+                </BorderPane>
+                <Label alignment="CENTER" layoutX="594.0" layoutY="-5.0" prefHeight="39.0" prefWidth="202.0" text="ВАШИ ПРЕДЫДУЩИЕ ПРИЕМЫ" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblErrors" alignment="CENTER" layoutX="662.0" layoutY="252.0" text="Ошибка" textAlignment="CENTER" visible="false">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <BorderPane layoutX="56.0" layoutY="41.0" />
+
+
+                <TableView fx:id="tableViewOfAppointments" layoutX="254.0" layoutY="384.0" prefHeight="248.0" prefWidth="775.0">
+                    <ScrollPane disable="false" prefHeight="102.0" prefWidth="0.0" visible="true" />
+                    <columns>
+                        <TableColumn fx:id="idColumnIDAppointment" text="ID" visible="false" />
+                        <TableColumn fx:id="idColumnDoctorFirstName" prefWidth="128.33331298828125" text="Имя врача" />
+                        <TableColumn fx:id="idColumnDoctorLastName" prefWidth="117.66665649414062" text="Фамилия врача" />
+                        <TableColumn fx:id="idColumnDoctorPatronymic" prefWidth="124.66668701171875" text="Отчество врача" />
+                        <TableColumn fx:id="idColumnSpecialization" prefWidth="189.33331298828125" text="Специальность" />
+                        <TableColumn fx:id="idColumnDateTime" prefWidth="214.66668701171875" text="Дата и время приема" />
+                    </columns>
+                </TableView>
+                <Label layoutX="607.0" layoutY="333.0" prefHeight="39.0" prefWidth="177.0" text="ВАШИ АКТИВНЫЕ ТАЛОНЫ" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+
+
+            </children>
+        </Pane>
+        <VBox blendMode="ADD" prefHeight="640.0" prefWidth="224.0" style="-fx-background-color: #05668D;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <JFXButton fx:id="workScheduleBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="69.0" prefWidth="231.0" style="-fx-background-color: #05668D;" text="График  работы" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </JFXButton>
+                <JFXButton fx:id="appointmentBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="67.0" prefWidth="227.0" style="-fx-background-color: #05668D; " text="Запись на прием" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </JFXButton>
+                <JFXButton fx:id="commentBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="72.0" prefWidth="223.0" style="-fx-background-color: #05668D; " text="Обратная связь" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </JFXButton>
+                <JFXButton fx:id="showDataBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="77.0" prefWidth="222.0" style="-fx-background-color: #05668D;" text="Ваши приемы" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </JFXButton>
+                <JFXButton fx:id="backBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="66.0" prefWidth="229.0" style="-fx-background-color: #05668D;" text="Выйти" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </JFXButton>
+            </children>
+            <padding>
+                <Insets bottom="5.0" />
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

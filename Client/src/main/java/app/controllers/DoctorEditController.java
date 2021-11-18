@@ -4,10 +4,7 @@ import app.connection.ClientConnection;
 import app.connection.ClientRequest;
 import app.connection.ServerResponse;
 import app.enums.HANDLER_TYPE;
-import app.models.AnswerTransferModels.GetDistrictsAndAddressesForAdminAtm;
-import app.models.AnswerTransferModels.GetDoctorListAtm;
-import app.models.AnswerTransferModels.GetDoctorListForAdminAtm;
-import app.models.AnswerTransferModels.GetUserListAtm;
+import app.models.AnswerTransferModels.*;
 import app.models.DataTransferModels.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -64,6 +61,14 @@ public class DoctorEditController implements Initializable {
     @FXML
     private TableColumn<GetDistrictsAndAddressesForAdminAtm, String> idColumnIDDistrict,
             idColumnIDAddress, idColumnIDDistrictName, idColumnAddressName, idColumnAddressHouse, idColumnAddressFlat;
+
+    @FXML
+    TableView<GetDistrictsForAdminAtm> tableViewDistrictsName;
+
+
+    @FXML
+    private TableColumn<GetDistrictsForAdminAtm, String> idColumnIDDistrictForDistrict,
+            idColumnIDDistrictNameForDistrict;
 
 
     @Override
@@ -229,23 +234,66 @@ public class DoctorEditController implements Initializable {
 
                 });
 
-        idColumnAddressFlat.setCellValueFactory(new PropertyValueFactory<GetDistrictsAndAddressesForAdminAtm, String>("addressFlat"));
-        idColumnAddressFlat.setCellFactory(TextFieldTableCell.<GetDistrictsAndAddressesForAdminAtm>forTableColumn());
-        idColumnAddressFlat.setOnEditCommit(
-                (TableColumn.CellEditEvent<GetDistrictsAndAddressesForAdminAtm, String> event) -> {
-                    TablePosition<GetDistrictsAndAddressesForAdminAtm, String> pos = event.getTablePosition();
-
-                    String newValue = event.getNewValue();
-
-                    int row = pos.getRow();
-                    GetDistrictsAndAddressesForAdminAtm getDistrictsAndAddressesForAdminAtm = event.getTableView().getItems().get(row);
-                    getDistrictsAndAddressesForAdminAtm.setAddressFlat(newValue);
-                    updateDistrict(getDistrictsAndAddressesForAdminAtm);
-
-                });
+//        idColumnAddressFlat.setCellValueFactory(new PropertyValueFactory<GetDistrictsAndAddressesForAdminAtm, String>("addressFlat"));
+//        idColumnAddressFlat.setCellFactory(TextFieldTableCell.<GetDistrictsAndAddressesForAdminAtm>forTableColumn());
+//        idColumnAddressFlat.setOnEditCommit(
+//                (TableColumn.CellEditEvent<GetDistrictsAndAddressesForAdminAtm, String> event) -> {
+//                    TablePosition<GetDistrictsAndAddressesForAdminAtm, String> pos = event.getTablePosition();
+//
+//                    String newValue = event.getNewValue();
+//
+//                    int row = pos.getRow();
+//                    GetDistrictsAndAddressesForAdminAtm getDistrictsAndAddressesForAdminAtm = event.getTableView().getItems().get(row);
+//                    getDistrictsAndAddressesForAdminAtm.setAddressFlat(newValue);
+//                    updateDistrict(getDistrictsAndAddressesForAdminAtm);
+//
+//                });
 
         tableViewDistricts.getItems().setAll(getDistrictsToAdd());
 
+
+        idColumnIDDistrictForDistrict.setCellValueFactory(new PropertyValueFactory<GetDistrictsForAdminAtm, String>("districtID"));
+
+        idColumnIDDistrictNameForDistrict.setCellValueFactory(new PropertyValueFactory<GetDistrictsForAdminAtm, String>("name"));
+//        idColumnIDDistrictNameForDistrict.setCellFactory(TextFieldTableCell.<GetDistrictsAndAddressesForAdminAtm>forTableColumn());
+//        idColumnIDDistrictNameForDistrict.setOnEditCommit(
+//                (TableColumn.CellEditEvent<GetDistrictsAndAddressesForAdminAtm, String> event) -> {
+//                    TablePosition<GetDistrictsAndAddressesForAdminAtm, String> pos = event.getTablePosition();
+//
+//                    String newValue = event.getNewValue();
+//
+//                    int row = pos.getRow();
+//                    GetDistrictsAndAddressesForAdminAtm getDistrictsAndAddressesForAdminAtm = event.getTableView().getItems().get(row);
+//                    getDistrictsAndAddressesForAdminAtm.setDistrictName(newValue);
+//                    updateDistrict(getDistrictsAndAddressesForAdminAtm);
+//
+//                });
+        tableViewDistrictsName.getItems().setAll(getDistrictsNameToAdd());
+    }
+    private List<GetDistrictsForAdminAtm> getDistrictsNameToAdd() {
+        GetDistrictsForAdminDto getDistrictsForAdminDto = new GetDistrictsForAdminDto();
+
+        ClientRequest<GetDistrictsForAdminDto> request = new ClientRequest<>();
+        request.setType(HANDLER_TYPE.getDistrictsNameForAdmin);
+        request.setData(getDistrictsForAdminDto);
+
+        try {
+            ClientConnection.getInstance().sendObject(request);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ServerResponse response = null;
+        try {
+            response = (ServerResponse) ClientConnection.getInstance().receiveObject();
+        } catch (ClassNotFoundException | IOException e) {
+            e.printStackTrace();
+        }
+        if (response.getStatus() == true) {
+            System.out.println(response.getData());
+        } else {
+            System.out.println(response.getMessage());
+        }
+        return (List<GetDistrictsForAdminAtm>) response.getData();
     }
 
     private UpdateDoctorDto updateDoctorDtoMapping(GetDoctorListForAdminAtm getDoctorListForAdminAtm){
@@ -453,7 +501,7 @@ public class DoctorEditController implements Initializable {
         addAddress.setDistrictName(txtDistrict.getText());
         addAddress.setAddressName(txtName.getText());
         addAddress.setAddressHouse(txtHouse.getText());
-        addAddress.setAddressFlat(txtFlat.getText());
+//        addAddress.setAddressFlat(txtFlat.getText());
 
         ClientRequest<AddAddressDto> request = new ClientRequest<>();
         request.setType(HANDLER_TYPE.addAddress);

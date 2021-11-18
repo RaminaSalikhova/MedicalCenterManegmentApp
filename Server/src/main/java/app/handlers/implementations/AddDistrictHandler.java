@@ -27,9 +27,9 @@ public class AddDistrictHandler extends RequestHandler<AddDistrictDto, String> {
             district= Optional.ofNullable(new District());
             district.get().setName(addDistrictDto.getDistrictName());
             districtService.save(district.get());
-        }
+            return "Успешно";
 
-        return null;
+        }
     }
 
 

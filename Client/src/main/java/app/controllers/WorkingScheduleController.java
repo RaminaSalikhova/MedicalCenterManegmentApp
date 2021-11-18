@@ -40,12 +40,13 @@ public class WorkingScheduleController implements Initializable {
 
     @FXML
     private TableColumn<GetScheduleListAtm, String> idColumnID, idColumnFirst_name,
-            idColumnLast_name, idColumnStartTime, idColumnEndTime, idColumnRoomNumber;
+            idColumnLast_name,idColumnSpecialization, idColumnStartTime, idColumnEndTime, idColumnRoomNumber;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         idColumnFirst_name.setCellValueFactory(new PropertyValueFactory<GetScheduleListAtm, String>("first_name"));
         idColumnLast_name.setCellValueFactory(new PropertyValueFactory<GetScheduleListAtm, String>("last_name"));
+        idColumnSpecialization.setCellValueFactory(new PropertyValueFactory<GetScheduleListAtm, String>("specialization"));
         idColumnStartTime.setCellValueFactory(new PropertyValueFactory<GetScheduleListAtm, String>("startTime"));
         idColumnEndTime.setCellValueFactory(new PropertyValueFactory<GetScheduleListAtm, String>("endTime"));
         idColumnRoomNumber.setCellValueFactory(new PropertyValueFactory<GetScheduleListAtm, String>("roomNumber"));

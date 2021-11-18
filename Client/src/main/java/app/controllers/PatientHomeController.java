@@ -6,6 +6,7 @@ import app.connection.ServerResponse;
 import app.enums.HANDLER_TYPE;
 import app.enums.ROLE_TYPE;
 import app.models.AnswerTransferModels.GetAddressListAtm;
+import app.models.AnswerTransferModels.GetDistrictsAndAddressesForAdminAtm;
 import app.models.AnswerTransferModels.GetUserAddressAtm;
 import app.models.AnswerTransferModels.UserAtm;
 import app.models.DataTransferModels.*;
@@ -38,10 +39,10 @@ import java.util.regex.Pattern;
 public class PatientHomeController implements Initializable {
 
     @FXML
-    private JFXTextField txtPhoneNumber, txtUsername, txtLastName, txtFirstName, txtPatronymic, txtDob;
+    private JFXTextField txtPhoneNumber, txtUsername, txtLastName, txtFirstName, txtPatronymic, txtDob,txtFlat;
 
     @FXML
-    private JFXButton backBtn, commentBtn, appointmentBtn, workScheduleBtn, saveBtn, saveAddressBtn;
+    private JFXButton backBtn, commentBtn, appointmentBtn, workScheduleBtn, saveBtn, saveAddressBtn, showDataBtn;
 
     @FXML
     private Label lblErrors;
@@ -55,7 +56,7 @@ public class PatientHomeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        comboAddress.getItems().addAll(getItemsToAdd());
+        comboAddress.getItems().addAll(getAddressToAdd());
 
         setData();
     }
@@ -87,7 +88,9 @@ public class PatientHomeController implements Initializable {
         List<GetAddressListAtm> getAddressListAtms = (List<GetAddressListAtm>) response.getData();
         List<String> elements = new ArrayList<>();
         for (GetAddressListAtm el : getAddressListAtms) {
-            elements.add("Улица: " + el.getAddressName() + " Дом: " + el.getAddressHouse() + " Квартира: " + el.getAddressFlat());
+//            elements.add("Улица: " + el.getAddressName() + " Дом: " + el.getAddressHouse() + " Квартира: " + el.getAddressFlat());
+            elements.add("Улица: " + el.getAddressName() + " Дом: " + el.getAddressHouse() );
+
         }
         return elements;
     }
@@ -172,47 +175,65 @@ public class PatientHomeController implements Initializable {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
+        }else if (ae.getSource() == showDataBtn) {
+            try {
+                Stage stage = new Stage();
+                Pane root = FXMLLoader.load(getClass().getResource("/PatientAppointmentData.fxml"));
+                stage.setScene(new Scene(root));
+                stage.show();
+                stage.setResizable(false);
+
+                ((Node) (ae.getSource())).getScene().getWindow().hide();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 
     private void saveAddress() {
-        UpdateUserAddressDto updateUserAddressDto = new UpdateUserAddressDto();
-        updateUserAddressDto.setUserID(id);
+        if (txtFlat.getText().isEmpty() &&
+        comboAddress.getSelectionModel().isEmpty()){
+            lblErrors.setVisible(true);
+            lblErrors.setTextFill(Color.TOMATO);
+            lblErrors.setText("Заполните все поля");
+        }else {
+            UpdateUserAddressDto updateUserAddressDto = new UpdateUserAddressDto();
+            updateUserAddressDto.setUserID(id);
 
-        String el = (String) comboAddress.getSelectionModel().getSelectedItem();
-        String[] values = el.split(" ");
-        String addressName = values[1];
-        String house = values[3];
-        String flat = values[5];
+            String el = (String) comboAddress.getSelectionModel().getSelectedItem();
+            String[] values = el.split(" ");
+            String addressName = values[1];
+            String house = values[3];
+            String flat = txtFlat.getText();
 
-        updateUserAddressDto.setAddressName(addressName);
-        updateUserAddressDto.setHouse(house);
-        updateUserAddressDto.setFlat(flat);
+            updateUserAddressDto.setAddressName(addressName);
+            updateUserAddressDto.setHouse(house);
+            updateUserAddressDto.setFlat(flat);
 
-        ClientRequest<UpdateUserAddressDto> request = new ClientRequest<>();
-        request.setType(HANDLER_TYPE.updateUserAddress);
-        request.setData(updateUserAddressDto);
+            ClientRequest<UpdateUserAddressDto> request = new ClientRequest<>();
+            request.setType(HANDLER_TYPE.updateUserAddress);
+            request.setData(updateUserAddressDto);
 
-        try {
-            ClientConnection.getInstance().sendObject(request);
-        } catch (
-                IOException e) {
-            e.printStackTrace();
+            try {
+                ClientConnection.getInstance().sendObject(request);
+            } catch (
+                    IOException e) {
+                e.printStackTrace();
+            }
+
+            ServerResponse response = null;
+            try {
+                response = (ServerResponse) ClientConnection.getInstance().receiveObject();
+            } catch (ClassNotFoundException |
+                    IOException e) {
+                e.printStackTrace();
+            }
+            if (response.getStatus() == true) {
+                System.out.println(response.getData());
+            } else {
+                System.out.println(response.getMessage());
+            }
         }
-
-        ServerResponse response = null;
-        try {
-            response = (ServerResponse) ClientConnection.getInstance().receiveObject();
-        } catch (ClassNotFoundException |
-                IOException e) {
-            e.printStackTrace();
-        }
-        if (response.getStatus() == true) {
-            System.out.println(response.getData());
-        } else {
-            System.out.println(response.getMessage());
-        }
-
     }
 
     private void updateUser() {
@@ -322,6 +343,42 @@ public class PatientHomeController implements Initializable {
             comboAddress.setPromptText(address);
             comboAddress.setDisable(true);
             saveAddressBtn.setDisable(true);
+            txtFlat.setDisable(true);
         }
     }
+
+    private List<String> getAddressToAdd() {
+        GetDistrictsAndAddressesForAdminDto getDistrictsAndAddressesForAdminDto = new GetDistrictsAndAddressesForAdminDto();
+
+        ClientRequest<GetDistrictsAndAddressesForAdminDto> request = new ClientRequest<>();
+        request.setType(HANDLER_TYPE.getDistrictsForAdmin);
+        request.setData(getDistrictsAndAddressesForAdminDto);
+
+        try {
+            ClientConnection.getInstance().sendObject(request);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ServerResponse response = null;
+        try {
+            response = (ServerResponse) ClientConnection.getInstance().receiveObject();
+        } catch (ClassNotFoundException | IOException e) {
+            e.printStackTrace();
+        }
+        if (response.getStatus() == true) {
+            System.out.println(response.getData());
+        } else {
+            System.out.println(response.getMessage());
+        }
+
+        List<GetDistrictsAndAddressesForAdminAtm> getAddressListAtms = (List<GetDistrictsAndAddressesForAdminAtm>) response.getData();
+        List<String> elements = new ArrayList<>();
+        for (GetDistrictsAndAddressesForAdminAtm el : getAddressListAtms) {
+//            elements.add("Улица: " + el.getAddressName() + " Дом: " + el.getAddressHouse() + " Квартира: " + el.getAddressFlat());
+            elements.add("Улица: " + el.getAddressName() + " Дом: " + el.getAddressHouse() );
+
+        }
+        return elements;
+    }
+
 }

@@ -2,6 +2,7 @@ package app.handlers.implementations;
 
 import app.entity.Address;
 import app.entity.District;
+import app.entity.Doctor;
 import app.enums.HANDLER_TYPE;
 import app.handlers.RequestHandler;
 import app.models.AnswerTransferModels.GetDistrictsAndAddressesForAdminAtm;
@@ -9,9 +10,8 @@ import app.models.DataTransferModels.GetDistrictsAndAddressesForAdminDto;
 import app.services.AddressService;
 import app.services.DistrictService;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class GetDistrictsForAdmin extends RequestHandler<GetDistrictsAndAddressesForAdminDto, List<GetDistrictsAndAddressesForAdminAtm>> {
     @Override
@@ -24,7 +24,8 @@ public class GetDistrictsForAdmin extends RequestHandler<GetDistrictsAndAddresse
         List<GetDistrictsAndAddressesForAdminAtm> getDistrictsAndAddressesForAdminAtms=new ArrayList<>();
 
         AddressService addressService=new AddressService();
-        List<Address> addresses=addressService.findAll();
+//        List<Address> addresses=addressService.findAll();
+        List<Address> addresses=addressService.findAllGroupByHouseNumber();
 
         for(Address address: addresses){
             GetDistrictsAndAddressesForAdminAtm getDistrictsAndAddressesForAdminAtm=new GetDistrictsAndAddressesForAdminAtm();
@@ -39,12 +40,12 @@ public class GetDistrictsForAdmin extends RequestHandler<GetDistrictsAndAddresse
                 getDistrictsAndAddressesForAdminAtm.setAddressHouse("Не установлено");
             }
 
-            Optional<Integer> flat=Optional.ofNullable(address.getFlatNumber());
-            if(house.isPresent()){
-                getDistrictsAndAddressesForAdminAtm.setAddressFlat(flat.get().toString());
-            }else {
-                getDistrictsAndAddressesForAdminAtm.setAddressFlat("Не установлено");
-            }
+//            Optional<Integer> flat=Optional.ofNullable(address.getFlatNumber());
+//            if(house.isPresent()){
+//                getDistrictsAndAddressesForAdminAtm.setAddressFlat(flat.get().toString());
+//            }else {
+//                getDistrictsAndAddressesForAdminAtm.setAddressFlat("Не установлено");
+//            }
 
             DistrictService districtService=new DistrictService();
             Optional<Long> districtID=Optional.ofNullable(address.getDistrictId());

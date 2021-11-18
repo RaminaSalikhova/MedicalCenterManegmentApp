@@ -39,4 +39,5 @@ public class AppointmentService {
 
     public void updateVisit(UpdateAppointmentDto updateAppointmentDto){appointmentDao.updateVisit(updateAppointmentDto);}
 
+    public List<Appointment> findAllByPatientIDAndVisited(long patientID){return appointmentDao.findAllByPatientIDAndVisited(patientID);}
     }

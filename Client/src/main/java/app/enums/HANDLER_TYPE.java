@@ -29,5 +29,8 @@ public enum HANDLER_TYPE {
     getReport,
     getAddressList,
     getUserAddress,
-    updateUserAddress
+    updateUserAddress,
+    getPatientListOfVisitedAppointment,
+    getPatientListAppointment,
+    getDistrictsNameForAdmin
 }

@@ -54,6 +54,9 @@ public class ClientHandler extends Thread {
         requestHandlers.add(new GetAddressListHandler());
         requestHandlers.add(new GetUserAddressHandler());
         requestHandlers.add(new UpdateUserAddressHandler());
+        requestHandlers.add(new GetPatientListOfVisitedAppointmentHandler());
+        requestHandlers.add(new GetPatientListAppointmentHandler());
+        requestHandlers.add(new GetDistrictsNameForAdminHandler());
     }
 
     public void run() {

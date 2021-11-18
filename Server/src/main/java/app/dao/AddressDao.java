@@ -2,6 +2,7 @@ package app.dao;
 
 import app.entity.Address;
 import app.entity.Appointment;
+import app.models.DataTransferModels.UpdateDistrictDto;
 import app.models.DataTransferModels.UpdateUserAddressDto;
 
 import java.util.List;
@@ -16,5 +17,10 @@ public interface AddressDao {
     public void delete(Address address);
 
     public List<Address> findAll();
+
     public Address findAddress(UpdateUserAddressDto address) ;
+
+    public List<Address> findEqualsHouseAndStreetAddress(UpdateDistrictDto address);
+
+    public List<Address> findAllGroupByHouseNumber();
 }

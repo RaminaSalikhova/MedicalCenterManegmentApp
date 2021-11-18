@@ -13,6 +13,7 @@ import java.io.Serializable;
 public class GetScheduleListAtm implements Serializable {
     private String first_name;
     private String last_name;
+    private String specialization;
     private String roomNumber;
     private String startTime;
     private String endTime;

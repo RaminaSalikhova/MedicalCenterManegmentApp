@@ -13,7 +13,7 @@
             <Image url="@images/Feature1_02_web_JAN20-1024x870.png" />
         </image>
     </ImageView>
-    <Pane opacity="0.78" prefHeight="641.0" prefWidth="1026.0" style="-fx-background-color: #000000;">
+    <Pane opacity="0.78" prefHeight="873.0" prefWidth="1110.0" style="-fx-background-color: #000000;">
         <children>
             <Label alignment="CENTER" layoutX="344.0" layoutY="27.0" style="-fx-text-fill: #05668D;" text="ДОБРО ПОЖАЛОВАТЬ" textFill="WHITE" wrapText="true">
                 <font>

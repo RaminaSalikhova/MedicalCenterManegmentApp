@@ -26,7 +26,7 @@ public class AddAddressHandler extends RequestHandler<AddAddressDto, String> {
         List<Address> addresses=addressService.findAll();
         for (Address el: addresses){
             if(el.getHouseNumber().toString().equals(addAddressDto.getAddressHouse()) &&
-            el.getFlatNumber().toString().equals(addAddressDto.getAddressFlat()) &&
+//            el.getFlatNumber().toString().equals(addAddressDto.getAddressFlat()) &&
                     el.getName().equals(addAddressDto.getAddressName())){
                 return "Адрес уже существует";
             }
@@ -40,7 +40,7 @@ public class AddAddressHandler extends RequestHandler<AddAddressDto, String> {
             address.setDistrictByDistrictId(district.get());
             address.setName(addAddressDto.getAddressName());
             address.setHouseNumber(Integer.valueOf(addAddressDto.getAddressHouse()));
-            address.setFlatNumber(Integer.valueOf(addAddressDto.getAddressFlat()));
+//            address.setFlatNumber(Integer.valueOf(addAddressDto.getAddressFlat()));
 
             addressService.save(address);
         }else {

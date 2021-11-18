@@ -15,15 +15,16 @@
             </image>
         </ImageView>
         <Pane layoutX="-20.0" layoutY="-3.0" opacity="0.78" prefHeight="643.0" prefWidth="1156.0" style="-fx-background-color: #000000;">
-            <BorderPane layoutX="329.0" layoutY="123.0" prefHeight="434.0" prefWidth="700.0">
+            <BorderPane layoutX="256.0" layoutY="74.0" prefHeight="483.0" prefWidth="773.0">
                 <center>
                     <ScrollPane disable="false" prefHeight="7861.0" prefWidth="1143.0" visible="true" />
                     <TableView fx:id="tableView" layoutX="454.0" layoutY="129.0" prefHeight="450.0" prefWidth="251.0">
                         <columns>
                             <TableColumn fx:id="idColumnFirst_name" prefWidth="149.0" text="Имя" />
-                            <TableColumn fx:id="idColumnLast_name" prefWidth="210.3333740234375" text="Фамилия" />
-                            <TableColumn fx:id="idColumnStartTime" prefWidth="114.33331298828125" text="С" />
-                            <TableColumn fx:id="idColumnEndTime" prefWidth="104.0" text="До" />
+                            <TableColumn fx:id="idColumnLast_name" prefWidth="185.33334350585938" text="Фамилия" />
+                            <TableColumn fx:id="idColumnSpecialization" prefWidth="203.33331298828125" text="Специальность" />
+                            <TableColumn fx:id="idColumnStartTime" prefWidth="119.0" text="С" />
+                            <TableColumn fx:id="idColumnEndTime" prefWidth="135.3333740234375" text="До" />
                             <TableColumn fx:id="idColumnRoomNumber" prefWidth="121.33331298828125" text="Кабинет" />
                         </columns>
                     </TableView>

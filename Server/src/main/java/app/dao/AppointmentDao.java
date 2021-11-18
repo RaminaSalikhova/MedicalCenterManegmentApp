@@ -24,4 +24,6 @@ public interface AppointmentDao {
     public List<Appointment> findAllByPatientIDAndDoctorID(long patientID, long doctorID);
 
     public void updateVisit(UpdateAppointmentDto updateAppointmentDto);
+
+    public List<Appointment> findAllByPatientIDAndVisited(long patientID);
 }

@@ -96,6 +96,18 @@ public class AppointmentDaoImpl implements AppointmentDao{
         return appointments;
     }
 
+    public List<Appointment> findAllByPatientIDAndVisited(long patientID){
+
+        List<Appointment> appointments = HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(
+                "select * from appointment where patientID = :param",
+                Appointment.class
+        )
+                .setParameter("param", patientID)
+                .getResultList();
+
+        return appointments;
+    }
+
     public List<Appointment> findAllByPatientIDAndDoctorID(long patientID, long doctorID){
 
         List<Appointment> appointments = HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery(

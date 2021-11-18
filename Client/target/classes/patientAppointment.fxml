@@ -14,12 +14,14 @@
                 <Image url="@../resources/images/clip-new-samples-for-research.png" />
             </image>
         </ImageView>
-        <HBox id="HBox" alignment="CENTER" layoutX="241.0" layoutY="77.0" prefHeight="25.0" prefWidth="281.0" spacing="5.0" AnchorPane.leftAnchor="241.0" AnchorPane.rightAnchor="626.0" AnchorPane.topAnchor="77.0">
+        <HBox id="HBox" alignment="CENTER" layoutX="241.0" layoutY="77.0" prefHeight="25.0" prefWidth="343.0" spacing="5.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="241.0" AnchorPane.rightAnchor="564.0" AnchorPane.topAnchor="77.0">
             <children>
-                <Label text="Filter Table:" />
+                <Label text="Поиск по имени и фамилии:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+                <TextField fx:id="filterField" layoutX="393.0" layoutY="85.0" prefHeight="18.0" prefWidth="149.0" />
             </children>
-            <TextField fx:id="filterField" layoutX="393.0" layoutY="85.0" prefHeight="18.0" prefWidth="149.0" />
-
         </HBox>
 
         <Pane layoutX="-5.0" layoutY="-15.0" opacity="0.78" prefHeight="650.0" prefWidth="1153.0" style="-fx-background-color: #000000;">

@@ -31,12 +31,6 @@ public class GetReportHandler extends RequestHandler<GetReportDto, String> {
         DoctorService doctorService=new DoctorService();
         List<Doctor> doctorCollection=doctorService.findAll();
         Collections.addAll(doctorCollection);
-//        Stream<Doctor> doctorStream = null;
-//        doctorStream=Stream.concat(doctorStream.collect(doctorCollection));
-//        for(Doctor el: doctorCollection){
-//            doctorStream=Stream.of();
-//        }
-//        Stream<List<Doctor>> doctorCollection=Stream.of(doctorService.findAll());
 
         Map<Long, List<Doctor>> doctorsCountByDistricts = doctorCollection.stream().collect(
                 Collectors.groupingBy(Doctor::getDistrictId));
@@ -47,14 +41,6 @@ public class GetReportHandler extends RequestHandler<GetReportDto, String> {
             System.out.println(item.getValue().size());
             content=content.concat("Участок: "+item.getKey()+" Кол-во врачей: " +item.getValue().size()+"\n");
         }
-//        int amountOfDoctorsPerDistrict = 0;
-//        List<GetDoctorListForAdminAtm> list = getDoctorsToAdd();
-//        for (GetDoctorListForAdminAtm el : list) {
-//            if ()
-//                amountOfDoctorsPerDistrict++;
-//            content = content.concat("Участок: " + el.getDistrictName());
-//        }
-//        content = content.concat("Участок: ");
 
         return content;
     }

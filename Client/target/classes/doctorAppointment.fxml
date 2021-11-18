@@ -55,7 +55,7 @@
                 <JFXTextField fx:id="txtDiagnosis" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="380.0" prefHeight="31.0" prefWidth="384.0" promptText="Диагноз" unFocusColor="WHITE" />
                 <JFXTextField fx:id="txtRecommendation" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="186.0" prefHeight="31.0" prefWidth="384.0" promptText="Рекомендации" unFocusColor="WHITE" />
                 <JFXTextField fx:id="txtReport" focusColor="#a2d2ff" labelFloat="true" layoutX="349.0" layoutY="320.0" prefHeight="31.0" prefWidth="384.0" promptText="Заключение" unFocusColor="WHITE" />
-                <JFXCheckBox fx:id="checkBox" layoutX="349.0" layoutY="444.0" onAction="#onCheckBoxAction" text="Пришел" />
+                <JFXCheckBox fx:id="checkBox" selected="true" layoutX="349.0" layoutY="444.0" onAction="#onCheckBoxAction" text="Пришел" />
                 <JFXButton fx:id="submitBtn" alignment="CENTER" layoutX="349.0" layoutY="495.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="208.0" style="-fx-background-color: #05668D;" text="Подтвердить" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="18.0" />
