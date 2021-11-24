@@ -38,7 +38,7 @@ public class GetPatientListAppointmentHandler extends RequestHandler<GetPatientL
                 Doctor doctor = doctorService.findById(appointment.getDoctorId());
 
                 UserService userService = new UserService();
-                User user = userService.findById(doctor.getId());
+                User user = userService.findById(doctor.getUserId());
 
                 patientListAppointmentAtm.setAppointmentID(appointment.getId());
                 patientListAppointmentAtm.setFirst_name(user.getFirstName());

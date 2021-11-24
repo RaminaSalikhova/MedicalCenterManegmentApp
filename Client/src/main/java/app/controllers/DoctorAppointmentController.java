@@ -173,7 +173,7 @@ public class DoctorAppointmentController implements Initializable {
             } else {
                 System.out.println(response.getMessage());
             }
-
+            DoctorHomeController.incrementDoneCount();
         }
     }
 

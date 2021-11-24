@@ -82,7 +82,7 @@ public class WorkingScheduleController implements Initializable {
 
 
     @FXML
-    private JFXButton backBtn, commentBtn, appointmentBtn, workScheduleBtn;
+    private JFXButton backBtn, commentBtn, appointmentBtn, workScheduleBtn, showDataBtn;
 
 
     @FXML
@@ -121,6 +121,18 @@ public class WorkingScheduleController implements Initializable {
                 stage.show();
                 stage.setResizable(false);
 
+
+                ((Node) (ae.getSource())).getScene().getWindow().hide();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }else if (ae.getSource() == showDataBtn) {
+            try {
+                Stage stage = new Stage();
+                Pane root = FXMLLoader.load(getClass().getResource("/PatientAppointmentData.fxml"));
+                stage.setScene(new Scene(root));
+                stage.show();
+                stage.setResizable(false);
 
                 ((Node) (ae.getSource())).getScene().getWindow().hide();
             } catch (Exception e) {

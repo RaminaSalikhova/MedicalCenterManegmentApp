@@ -14,24 +14,24 @@
                 <Image url="@../resources/images/clip-new-samples-for-research.png" />
             </image>
         </ImageView>
-        <HBox id="HBox" alignment="CENTER" layoutX="241.0" layoutY="77.0" prefHeight="25.0" prefWidth="343.0" spacing="5.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="241.0" AnchorPane.rightAnchor="564.0" AnchorPane.topAnchor="77.0">
-            <children>
-                <Label text="Поиск по имени и фамилии:" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font></Label>
-                <TextField fx:id="filterField" layoutX="393.0" layoutY="85.0" prefHeight="18.0" prefWidth="149.0" />
-            </children>
-        </HBox>
+
 
         <Pane layoutX="-5.0" layoutY="-15.0" opacity="0.78" prefHeight="650.0" prefWidth="1153.0" style="-fx-background-color: #000000;">
-            <children>
-                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="544.0" layoutY="14.0" prefHeight="54.0" prefWidth="190.0" text="Заказ талона" textAlignment="CENTER" textFill="WHITE">
+            <children> <HBox id="HBox" alignment="CENTER" layoutX="242.0" layoutY="94.0" prefHeight="25.0" prefWidth="343.0" spacing="5.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="242.0" AnchorPane.rightAnchor="568.3333333333333" AnchorPane.topAnchor="94.0">
+                <children>
+                    <Label text="Поиск по имени и фамилии:" textFill="WHITE">
+                        <font>
+                            <Font size="14.0" />
+                        </font></Label>
+                    <TextField fx:id="filterField" layoutX="393.0" layoutY="85.0" prefHeight="18.0" prefWidth="149.0" />
+                </children>
+            </HBox>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="577.0" layoutY="14.0" prefHeight="54.0" prefWidth="190.0" text="Заказ талона" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Label alignment="CENTER" layoutX="535.0" layoutY="68.0" prefHeight="39.0" prefWidth="209.0" text="Выберите врача" textFill="WHITE" />
+                <Label alignment="CENTER" layoutX="568.0" layoutY="68.0" prefHeight="39.0" prefWidth="209.0" text="Выберите врача" textFill="WHITE" />
 
                 <BorderPane layoutX="275.0" layoutY="129.0" prefHeight="444.0" prefWidth="746.0">
                     <center>
@@ -81,7 +81,18 @@
                         <Insets top="5.0" />
                     </VBox.margin>
                 </JFXButton>
-                <JFXButton fx:id="commentBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="209.0" style="-fx-background-color: #05668D; " text="Оставить отзыв" textFill="WHITE">
+                <JFXButton fx:id="commentBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="54.0" prefWidth="209.0" style="-fx-background-color: #05668D; " text="Обратная связь" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </JFXButton>
+                <JFXButton fx:id="showDataBtn" alignment="CENTER" layoutX="560.0" layoutY="510.0" onAction="#handleButtonClicks" prefHeight="77.0" prefWidth="222.0" style="-fx-background-color: #05668D;" text="Ваши приемы" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>

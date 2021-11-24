@@ -3,15 +3,10 @@ package app.handlers.implementations;
 import app.entity.User;
 import app.helpers.LoginManager;
 import app.models.DataTransferModels.LoginDto;
-import app.services.UserService;
-import org.junit.Before;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class LoginHandlerTest {
     private LoginManager userManager;
@@ -32,11 +27,7 @@ class LoginHandlerTest {
 
         assertTrue(actualMessage.contains(expectedMessage));//Проверяет, что логическое условие истинно.
     }
-//
-//    @Test(expected = NullPointerException.class)
-//    public void testUserLoginWithEmptyLogin() throws Exception {
-//        userManager.getAndValidateUser("", "password");
-//    }
+
 
     @Test
     public void testUserLoginWithIncorrectLogin() throws Exception {

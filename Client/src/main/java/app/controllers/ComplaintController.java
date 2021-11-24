@@ -5,10 +5,8 @@ import app.connection.ClientRequest;
 import app.connection.ServerResponse;
 import app.enums.HANDLER_TYPE;
 import app.models.DataTransferModels.SendComplaintDto;
-import app.models.DataTransferModels.UpdateUserByPatientDto;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
-import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -19,13 +17,11 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class ComplaintController {
 
     @FXML
-    private JFXButton backBtn,commentBtn,appointmentBtn,workScheduleBtn, saveCommentBtn;
+    private JFXButton backBtn,commentBtn,appointmentBtn,workScheduleBtn, saveCommentBtn,showDataBtn;
 
     @FXML
     private JFXTextArea textarea;
@@ -83,6 +79,18 @@ public class ComplaintController {
                 stage.show();
                 stage.setResizable(false);
 
+
+                ((Node) (ae.getSource())).getScene().getWindow().hide();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }else if (ae.getSource() == showDataBtn) {
+            try {
+                Stage stage = new Stage();
+                Pane root = FXMLLoader.load(getClass().getResource("/PatientAppointmentData.fxml"));
+                stage.setScene(new Scene(root));
+                stage.show();
+                stage.setResizable(false);
 
                 ((Node) (ae.getSource())).getScene().getWindow().hide();
             } catch (Exception e) {
